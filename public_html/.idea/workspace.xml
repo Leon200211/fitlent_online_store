@@ -10,15 +10,30 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
+      <server host="127.0.0.1" id="69d2c4b2-0757-40b1-85cc-4098b6211b34" name="127.0.0.1" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/OpenServer/modules/system/html/openserver/phpmyadmin" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0" />
   <component name="ProjectId" id="2GgMTgj2dN0QDDHIKuPiuiWQLZk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Constants" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -30,10 +45,25 @@
       <option name="presentableId" value="Default" />
       <updated>1666805782459</updated>
       <workItem from="1666805783677" duration="2258000" />
+      <workItem from="1666808802705" duration="20000" />
+      <workItem from="1666879553841" duration="670000" />
+      <workItem from="1666892494637" duration="203000" />
+      <workItem from="1666892715922" duration="2540000" />
+      <workItem from="1666943987802" duration="473000" />
+      <workItem from="1666980453912" duration="4648000" />
+      <workItem from="1667029563380" duration="110000" />
+      <workItem from="1667055167855" duration="10591000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="index.php">
+        <watch expression="$_COOKIE" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

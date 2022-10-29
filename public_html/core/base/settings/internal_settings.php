@@ -25,3 +25,19 @@ const USER_CSS_JS = [
     'scripts' => []
 ];
 
+
+use core\base\exceptions\RouteException;  // импортируем пространство имен для исключения
+// для автоматического импортирование классов, не зависимо от их нахождения
+function autoloadMainClasses($class_name){
+
+    $class_name = str_replace('\\', '/', $class_name);
+
+    if(!@include_once $class_name . '.php'){  // знак @ игнорирует ошибки вызванные в условии
+        throw new RouteException('Не верное имя файла для подключения - ' . $class_name);
+    }
+}
+
+spl_autoload_register('autoloadMainClasses');
+
+
+

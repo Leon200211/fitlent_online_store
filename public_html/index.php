@@ -8,10 +8,24 @@
 define('VG_ACCESS', true);
 
 
-header('Content-Type:text/html;charset=utf-6'); // в какой кодировки пользователь обрабатывает данные (первый заголовок)
+header('Content-Type:text/html;charset=utf-8'); // в какой кодировки пользователь обрабатывает данные (первый заголовок)
 session_start(); //стартуем сессию
 
 
 
 require_once 'config.php';  // базовые настройки для хостинга
 require_once 'core/base/settings/internal_settings.php';  // фундаментальные настройки сайта
+
+use core\base\exceptions\RouteException;  // импортируем пространство имен для исключения
+use core\base\controllers\RouteController;
+
+try{
+    RouteController::getInstance();
+    //RouteController::getInstance()->route();  // вызов статического метода у класса RouteController
+
+}
+catch (RouteException $e){
+    exit($e->getMessage());
+}
+
+
