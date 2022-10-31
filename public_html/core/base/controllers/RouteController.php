@@ -66,21 +66,86 @@ class RouteController
 
             // проверка на вход в админку
             // если сразу после корня сайта идет попытка входа в админ панель
-            if(strrpos($address_str, $this->routes['admin']['alias']) === strlen(PATH)){
+            if(strpos($address_str, $this->routes['admin']['alias']) === strlen(PATH)){
+
                 /* Админка */
+
+                // обрезаем адресную строку и разбиваем путь
+                // после корень/admin/ ...
+                $url = explode('/', substr($address_str, strlen(PATH . $this->routes['admin']['alias']) + 1));
+
+
+                // проверка на обращение к плагину
+                if($url[0] and is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
+
+                    $plugin = array_shift($url); // array_shift() извлекает первое значение массива и удаляет его из массива
+
+
+                    // проверка есть ли настройки конкретно для этого плагина
+                    $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings'); // ucfirst — Преобразует первый символ строки в верхний регистр
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
+                        $pluginSettings = str_replace('\\', '/' , $pluginSettings);
+                        // имя класса плагина $pluginSettings
+                        $this->routes = $pluginSettings::get('routes');
+                    }
+
+                    // если есть директория записываем в нее путь
+                    $dir = $this->routes['plugins']['dir'] ? '/' . $this->routes['plugins']['dir'] . '/' : '/';
+                    // защита против использования некорректных данных
+                    $dir = str_replace('//', '/', $dir);
+
+
+                    $this->controller = $this->routes['plugins']['path'] . $plugin . $dir;
+                    $hrUrl = $this->routes['plugins']['hrUrl'];  // human readable url
+                    $route = 'plugins';
+
+                }else{ // если это не плагин
+                    $this->controller = $this->routes['admin']['path']; // путь к админ контроллеру
+                    $hrUrl = $this->routes['admin']['hrUrl'];  // human readable url
+                    $route = 'admin';
+                }
+
+
+
             }else{
                 // обрезаем адресную строку и разбиваем путь
-                $urs = explode('/', substr($address_str, strlen(PATH)));
+                $url = explode('/', substr($address_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
 
-                $this->controller = $this->routes['user']['path'];
+                $this->controller = $this->routes['user']['path']; // human readable url
 
                 $route = 'user';
             }
 
             // Метод для создания маршрута
-            $this->createRoute($route, $urs);
+            $this->createRoute($route, $url);
+
+
+            // работа с алиасами
+            if($url[1]){
+                $count = count($url);
+                $key = '';
+
+                if(!$hrUrl){
+                    $i = 1;
+                }else{
+                    $this->parameters['alias'] = $url[1];
+                    $i = 2;
+                }
+
+                // для записи аргументов по принципу ключ => значение [id => 1] в url id/1
+                for( ; $i < $count; $i++){
+                    if(!$key){
+                        $key = $url[$i];
+                        $this->parameters[$key] = '';
+                    }else{
+                        $this->parameters[$key] = $url[$i];
+                        $key = '';
+                    }
+                }
+
+            }
 
 
             exit();

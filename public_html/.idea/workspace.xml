@@ -10,13 +10,18 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
       <server host="127.0.0.1" id="69d2c4b2-0757-40b1-85cc-4098b6211b34" name="127.0.0.1" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="C:/OpenServer/modules/system/html/openserver/phpmyadmin" />
+        </path_mappings>
+      </server>
+      <server host="gui" id="10bfe121-7d2e-4b6d-add7-159a880bb7ce" name="gui" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/OpenServer/domains/my_gui/public_html" />
         </path_mappings>
       </server>
     </servers>
@@ -32,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Mat_test_1/public_html" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -55,7 +60,8 @@
       <workItem from="1667055167855" duration="10591000" />
       <workItem from="1667067671229" duration="610000" />
       <workItem from="1667118389772" duration="24000" />
-      <workItem from="1667150098167" duration="4050000" />
+      <workItem from="1667150098167" duration="4284000" />
+      <workItem from="1667228735630" duration="6131000" />
     </task>
     <servers />
   </component>

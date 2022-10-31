@@ -59,8 +59,15 @@ class ShopSettings
     // Здесь значения из Settings будут заменяться на эти
     private $routes = [
         'admin' => [
-            'name' => 'sudo',
-        ]
+            'name' => 'admin',
+            'path' => 'core/admin/controllers/',
+            'hrUrl' => false
+        ],
+        'plugins' => [
+            'path' => 'core/plugins/',
+            'hrUrl' => false,
+            'dir' => 'controller'
+        ],
     ];
 
 
