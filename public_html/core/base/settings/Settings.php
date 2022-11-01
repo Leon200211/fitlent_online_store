@@ -40,7 +40,10 @@ class Settings
         'admin' => [
             'alias' => 'admin',
             'path' => 'core/admin/controllers/',
-            'hrUrl' => false
+            'hrUrl' => false,
+            'routes' => [
+
+            ]
         ],
         'settings' => [
             'path' => 'core/base/settings/'
@@ -51,10 +54,10 @@ class Settings
             'dir' => false
         ],
         'user' => [
-            'path' => 'core/user/controllers',
+            'path' => 'core/user/controllers/',
             'hrUrl' => true,
             'routes' => [
-                'catalog' => 'site'
+                'catalog' => 'site/hello/by'
             ]
         ],
         'default' => [
@@ -105,7 +108,7 @@ class Settings
 
         foreach ($arrays as $array){
             foreach ($array as $key => $value){
-                if(is_array($value) and is_array($base[$key])){
+                if(is_array($value) and @is_array($base[$key])){
                     $base[$key] = $this->arrayMergeRecursive($base[$key], $value);
                 }else{
                     if(is_int($key)){

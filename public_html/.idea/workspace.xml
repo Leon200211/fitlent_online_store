@@ -10,7 +10,7 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -61,7 +61,9 @@
       <workItem from="1667067671229" duration="610000" />
       <workItem from="1667118389772" duration="24000" />
       <workItem from="1667150098167" duration="4284000" />
-      <workItem from="1667228735630" duration="6131000" />
+      <workItem from="1667228735630" duration="6646000" />
+      <workItem from="1667242785579" duration="31000" />
+      <workItem from="1667322237300" duration="3849000" />
     </task>
     <servers />
   </component>

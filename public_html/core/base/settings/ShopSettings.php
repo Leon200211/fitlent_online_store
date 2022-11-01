@@ -58,15 +58,12 @@ class ShopSettings
     // настройки пути
     // Здесь значения из Settings будут заменяться на эти
     private $routes = [
-        'admin' => [
-            'name' => 'admin',
-            'path' => 'core/admin/controllers/',
-            'hrUrl' => false
-        ],
         'plugins' => [
             'path' => 'core/plugins/',
             'hrUrl' => false,
-            'dir' => 'controller'
+            'dir' => false,
+            'routes' => [
+            ]
         ],
     ];
 

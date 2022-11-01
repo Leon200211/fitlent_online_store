@@ -22,10 +22,10 @@ class RouteController
     protected $routes; // маршруты
 
 
-    protected $controller;
+    protected $controller;  // контроллеры
     protected $inputMethod;
     protected $outputMethod;
-    protected $parameters;
+    protected $parameters;  // параметры
 
 
     private function __clone(){
@@ -84,7 +84,7 @@ class RouteController
                     // проверка есть ли настройки конкретно для этого плагина
                     $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings'); // ucfirst — Преобразует первый символ строки в верхний регистр
                     if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
-                        $pluginSettings = str_replace('\\', '/' , $pluginSettings);
+                        $pluginSettings = str_replace('/', '\\' , $pluginSettings);
                         // имя класса плагина $pluginSettings
                         $this->routes = $pluginSettings::get('routes');
                     }
@@ -123,7 +123,7 @@ class RouteController
 
 
             // работа с алиасами
-            if($url[1]){
+            if(@$url[1]){
                 $count = count($url);
                 $key = '';
 
@@ -146,10 +146,6 @@ class RouteController
                 }
 
             }
-
-
-            exit();
-
         }else{
             try{
                 throw new \Exception("Не корректная директория сайта");
@@ -166,7 +162,7 @@ class RouteController
 
         if(!empty($arr[0])){
             // проверка на алиасы  маршрутов
-            if($this->routes[$var]['routes'][$arr[0]]){
+            if(@$this->routes[$var]['routes'][$arr[0]]){
                 $route = explode('/', $this->routes[$var]['routes'][$arr[0]]);
                 $this->controller .= ucfirst($route[0].'Controller');
             } else { // если маршрут не описан, но есть контроллер
@@ -177,8 +173,8 @@ class RouteController
         }
 
         // если есть значения, то используем их, если их нет, то используем значения по умолчанию
-        $this->inputMethod = $route[1] ? $route[1] : $this->routes['default']['inputMethod'];
-        $this->outputMethod = $route[2] ? $route[2] : $this->routes['default']['outputMethod'];
+        @$this->inputMethod = @$route[1] ? @$route[1] : @$this->routes['default']['inputMethod'];
+        @$this->outputMethod = @$route[2] ? @$route[2] : @$this->routes['default']['outputMethod'];
 
         return;
     }
