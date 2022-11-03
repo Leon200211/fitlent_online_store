@@ -1,5 +1,5 @@
 <?php
-
+#/
 
 namespace core\base\controllers;
 
@@ -14,7 +14,7 @@ use core\base\settings\ShopSettings;
 // Он используется для создания всего одного экземпляра класса, и гарантирует,
 // что во время работы программы не появиться второй. Например в схеме MVC,
 // зачастую этот паттерн используется для порождения главного контроллера (фронтового)
-class RouteController
+class RouteController extends BaseController
 {
 
     static private $_instance;
@@ -22,10 +22,7 @@ class RouteController
     protected $routes; // маршруты
 
 
-    protected $controller;  // контроллеры
-    protected $inputMethod;
-    protected $outputMethod;
-    protected $parameters;  // параметры
+
 
 
     private function __clone(){
@@ -64,9 +61,12 @@ class RouteController
                 throw new RouteException('Сайт находится на тех обслуживание!');
             }
 
+            // обрезаем адресную строку и разбиваем путь
+            $url = explode('/', substr($address_str, strlen(PATH)));
+
             // проверка на вход в админку
             // если сразу после корня сайта идет попытка входа в админ панель
-            if(strpos($address_str, $this->routes['admin']['alias']) === strlen(PATH)){
+            if(!empty($url[0]) and $this->routes['admin']['alias'] === $url[0]){
 
                 /* Админка */
 
@@ -74,6 +74,7 @@ class RouteController
                 // после корень/admin/ ...
                 $url = explode('/', substr($address_str, strlen(PATH . $this->routes['admin']['alias']) + 1));
 
+                array_shift($url); // удаляем нулевой элемент 'ключевое слово для админа'
 
                 // проверка на обращение к плагину
                 if($url[0] and is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
@@ -108,8 +109,6 @@ class RouteController
 
 
             }else{
-                // обрезаем адресную строку и разбиваем путь
-                $url = explode('/', substr($address_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
 

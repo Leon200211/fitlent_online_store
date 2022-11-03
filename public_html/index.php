@@ -1,5 +1,5 @@
 <?php
-
+#/
 // все запросы по ссылкам
 // навигационные запросы по сайту
 
@@ -19,9 +19,12 @@ require_once 'core/base/settings/internal_settings.php';  // фундамент�
 use core\base\exceptions\RouteException;  // импортируем пространство имен для исключения
 use core\base\controllers\RouteController;
 
+
+
+
 try{
-    RouteController::getInstance();
-    //RouteController::getInstance()->route();  // вызов статического метода у класса RouteController
+    RouteController::getInstance()->route();
+
 
 }
 catch (RouteException $e){

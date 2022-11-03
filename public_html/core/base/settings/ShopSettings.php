@@ -1,5 +1,6 @@
 <?php
 
+#/
 
 namespace core\base\settings;
 
