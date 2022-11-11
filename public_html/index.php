@@ -21,10 +21,9 @@ use core\base\controllers\RouteController;
 
 
 
-
 try{
-    RouteController::getInstance()->route();
 
+    RouteController::getInstance()->route();
 
 }
 catch (RouteException $e){

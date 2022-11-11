@@ -17,26 +17,9 @@ use core\base\settings\ShopSettings;
 class RouteController extends BaseController
 {
 
-    static private $_instance;
+    use Singleton;
 
     protected $routes; // маршруты
-
-
-
-
-
-    private function __clone(){
-
-    }
-
-
-    static public function getInstance(){
-        if(self::$_instance instanceof self){  // проверка существует ли уже объект класса
-            return self::$_instance;
-        }
-
-        return self::$_instance = new self;  // если еще нет объекта, создать
-    }
 
 
     private function __construct(){
@@ -66,21 +49,21 @@ class RouteController extends BaseController
 
             // проверка на вход в админку
             // если сразу после корня сайта идет попытка входа в админ панель
-            if(!empty($url[0]) and $this->routes['admin']['alias'] === $url[0]){
+            if(!empty($url[0]) and $url[0] === $this->routes['admin']['alias']){
 
                 /* Админка */
 
                 // обрезаем адресную строку и разбиваем путь
                 // после корень/admin/ ...
-                $url = explode('/', substr($address_str, strlen(PATH . $this->routes['admin']['alias']) + 1));
+                //$url = explode('/', substr($address_str, strlen(PATH . $this->routes['admin']['alias']) + 1));
 
                 array_shift($url); // удаляем нулевой элемент 'ключевое слово для админа'
 
                 // проверка на обращение к плагину
+
                 if($url[0] and is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
 
                     $plugin = array_shift($url); // array_shift() извлекает первое значение массива и удаляет его из массива
-
 
                     // проверка есть ли настройки конкретно для этого плагина
                     $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings'); // ucfirst — Преобразует первый символ строки в верхний регистр

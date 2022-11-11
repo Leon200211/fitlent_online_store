@@ -4,33 +4,25 @@
 
 namespace core\base\settings;
 
+use core\base\controllers\Singleton;
 use core\base\settings\Settings;
 
 // настройки плагина Shop
 // используется Паттерн проектирования Singleton (Одиночка)
 class ShopSettings
 {
-    static private $_instance;
+    use Singleton;
 
     private $baseSettings;  // для доступа к экземпляру Settings
 
-    private function __construct(){
 
-    }
-
-    private function __clone(){
-
-    }
-
-    static public function getInstance(){
+    static private function instance(){
         if(self::$_instance instanceof self){  // проверка существует ли уже объект класса
             return self::$_instance;
         }
 
-        self::$_instance = new self;
-
         // для доступа к экземпляру Settings
-        self::$_instance->baseSettings = Settings::getInstance();
+        self::getInstance()->baseSettings = Settings::getInstance();
         // для склейки полей
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class());
         // для записи значений склейки
@@ -41,7 +33,7 @@ class ShopSettings
 
     // геттер для получения данных
     static public function get($property){
-        return self::getInstance()->$property;
+        return self::instance()->$property;
     }
 
 
@@ -65,7 +57,7 @@ class ShopSettings
             'dir' => false,
             'routes' => [
             ]
-        ],
+        ]
     ];
 
 

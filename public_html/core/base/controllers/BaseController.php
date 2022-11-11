@@ -4,9 +4,13 @@ namespace core\base\controllers;
 
 
 use core\base\exceptions\RouteException;
+use core\base\settings\Settings;
+
 
 abstract class BaseController
 {
+
+    use \core\base\controllers\BaseMethods;
 
     protected $page;
     protected $errors;
@@ -15,6 +19,12 @@ abstract class BaseController
     protected $inputMethod;
     protected $outputMethod;
     protected $parameters;  // параметры
+
+
+    // для подключения
+    protected $styles;
+    protected $scripts;
+
 
 
     public function route(){
@@ -48,9 +58,16 @@ abstract class BaseController
         $inputData = $args['inputMethod'];
         $outputData = $args['outputMethod'];
 
-        $this->$inputData();
+        $data = $this->$inputData();
 
-        $this->page = $this->$outputData();
+        if(method_exists($this, $outputData)){
+            $page = $this->$outputData($data);
+            if($page){
+                $this->page = $page;
+            }
+        }elseif($data){
+            $this->page = $data;
+        }
 
 
         // логирование ошибок
@@ -71,9 +88,22 @@ abstract class BaseController
 
 
         if(!$path){
-            $path = TEMPLATE . explode('controller', strtolower((new \ReflectionClass($this))->getShortName()))[0];
-        }
 
+            $class = new \ReflectionClass($this);
+            // пространство имен
+            $space = str_replace('\\', '/', $class->getNamespaceName() . '\\');
+            // получение маршрутов
+            $routes = Settings::get('routes');
+
+            if($space === $routes['user']['path']){
+                $template = TEMPLATE;
+            }else{
+                $template = ADMIN_TEMPLATE;
+            }
+
+
+            $path = $template . explode('controller', strtolower($class->getShortName()))[0];
+        }
 
 
         // работа с буфером обмена
@@ -84,13 +114,55 @@ abstract class BaseController
         // возвращаем данные из буфера обмена
         return ob_get_clean();
 
-
-
     }
+
+
 
     // отображение страницы
     protected function getPage(){
-        exit($this->page);
+
+        if(is_array($this->page)){
+            foreach ($this->page as $block){
+                echo $block;
+            }
+        }else{
+            echo $this->page;
+        }
+        exit();
+
+    }
+
+
+
+
+
+    protected function init($admin = false){
+
+        if(!$admin){
+            if(USER_CSS_JS['style']){
+                foreach (USER_CSS_JS['style'] as $item){
+                    $this->styles[] = PATH . TEMPLATE . trim($item, '/');
+                }
+            }
+
+            if(USER_CSS_JS['scripts']){
+                foreach (USER_CSS_JS['scripts'] as $item){
+                    $this->scripts[] = PATH . TEMPLATE . trim($item, '/');
+                }
+            }
+        }else{
+            if(ADMIN_CSS_JS['style']){
+                foreach (ADMIN_CSS_JS['style'] as $item){
+                    $this->styles[] = PATH . ADMIN_TEMPLATE . trim($item, '/');
+                }
+            }
+
+            if(ADMIN_CSS_JS['scripts']){
+                foreach (ADMIN_CSS_JS['scripts'] as $item){
+                    $this->scripts[] = PATH . ADMIN_TEMPLATE . trim($item, '/');
+                }
+            }
+        }
     }
 
 
