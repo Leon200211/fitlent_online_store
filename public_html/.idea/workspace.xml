@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="10a89f0e-2d8f-4b5f-9e1f-a9214867cc4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -86,7 +89,11 @@
       <workItem from="1668096226024" duration="34000" />
       <workItem from="1668096272181" duration="5012000" />
       <workItem from="1668159824439" duration="614000" />
-      <workItem from="1668162921443" duration="3711000" />
+      <workItem from="1668162921443" duration="4291000" />
+      <workItem from="1668167459742" duration="29000" />
+      <workItem from="1668167885022" duration="32000" />
+      <workItem from="1668337415317" duration="165000" />
+      <workItem from="1668531596222" duration="5282000" />
     </task>
     <servers />
   </component>

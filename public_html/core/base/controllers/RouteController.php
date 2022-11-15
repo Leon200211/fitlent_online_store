@@ -5,7 +5,6 @@ namespace core\base\controllers;
 
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
-use core\base\settings\ShopSettings;
 
 
 // НУЖЕН ДЛЯ РАЗБОРА АДРЕСНОЙ СТРОКИ
@@ -41,7 +40,7 @@ class RouteController extends BaseController
             $this->routes = Settings::get('routes');
             // если мы не получили данные
             if(!$this->routes){
-                throw new RouteException('Сайт находится на тех обслуживание!');
+                throw new RouteException('Отсутствуют маршруты в базовых настройках', 1);
             }
 
             // обрезаем адресную строку и разбиваем путь
@@ -129,11 +128,7 @@ class RouteController extends BaseController
 
             }
         }else{
-            try{
-                throw new \Exception("Не корректная директория сайта");
-            }catch (\Exception $e){
-                exit($e->getMessage());
-            }
+            throw new RouteException("Не корректная директория сайта", 1);
         }
     }
 

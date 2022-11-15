@@ -3,7 +3,7 @@
 
 namespace core\base\controllers;
 
-
+// трейт с базовыми методами
 trait BaseMethods
 {
 

@@ -9,6 +9,7 @@ DirectoryIndex index.php
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !favicon.ico
 
 
 RewriteRule ^(.*) index.php
