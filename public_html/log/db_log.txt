@@ -1,0 +1,8 @@
+Fault: 16-11-2022 20:37:12 - Ошибка в SQL запросе: SELECT * FROM `article123s` - 1146 Table 'fitlent_online_store.article123s' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line45
+
+Fault: 16-11-2022 20:37:19 - Ошибка в SQL запросе: SELECT * FROM `article123s` - 1146 Table 'fitlent_online_store.article123s' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line45
+

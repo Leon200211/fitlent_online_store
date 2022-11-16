@@ -60,7 +60,7 @@ class RouteController extends BaseController
 
                 // проверка на обращение к плагину
 
-                if($url[0] and is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
+                if(@$url[0] and is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . @$this->routes['plugins']['path'] . @$url[0])){
 
                     $plugin = array_shift($url); // array_shift() извлекает первое значение массива и удаляет его из массива
 

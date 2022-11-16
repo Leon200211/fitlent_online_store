@@ -48,12 +48,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Constants" value="false" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/base/exceptions" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\base\exceptions" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +100,11 @@
       <workItem from="1668167885022" duration="32000" />
       <workItem from="1668337415317" duration="165000" />
       <workItem from="1668531596222" duration="5282000" />
+      <workItem from="1668539393280" duration="595000" />
+      <workItem from="1668597164596" duration="51000" />
+      <workItem from="1668602950028" duration="94000" />
+      <workItem from="1668608885132" duration="36000" />
+      <workItem from="1668612165612" duration="6014000" />
     </task>
     <servers />
   </component>
@@ -101,6 +112,15 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/admin/controllers/IndexController.php</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />
