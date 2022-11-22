@@ -6,3 +6,7 @@ Fault: 16-11-2022 20:37:19 - Ошибка в SQL запросе: SELECT * FROM `
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line45
 
+Fault: 22-11-2022 17:43:02 - Ошибка в SQL запросе: SELECT articles.id,articles.name FROM articles   ORDER BY articles.id ASC,articles.name DESC 2 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line45
+

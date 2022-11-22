@@ -140,10 +140,105 @@ class BaseModel
         foreach ($set['fields'] as $field){
             $fields .= $table . $field . ',';
         }
+        // обрезаем запятую
+        $fields = rtrim($fields, ',');
 
         return $fields;
     }
 
+    // создание запроса для конструкции Where
+    protected function createWhere($table = false, $set, $instruction = 'WHERE'){
+
+        $table = $table ? $table . '.' : '';
+
+        $where = '';
+
+        if(!empty($set['where']) and is_array($set['where'])){
+
+            // пришли ли операнды
+            $set['operand'] = (!empty($set['operand']) and is_array($set['operand'])) ? $set['operand'] : ['='];
+            // пришли ли условия
+            $set['condition'] = (!empty($set['condition']) and is_array($set['condition'])) ? $set['condition'] : ['AND'];
+
+            $where = $instruction;
+
+
+            $o_count = 0;
+            $c_count = 0;
+
+            foreach ($set['where'] as $key => $item){
+
+                $where .= " ";
+
+                // определяем операнд
+                if(isset($set['operand'][$o_count])){
+                    $operand = $set['operand'][$o_count];
+                    $o_count++;
+                }else{
+                    $operand = $set['operand'][$o_count-1];
+                }
+                // определяем условие
+                if(isset($set['condition'][$c_count])){
+                    $condition = $set['condition'][$c_count];
+                    $c_count++;
+                }else{
+                    $condition = $set['condition'][$c_count-1];
+                }
+
+                if($operand === 'IN' or $operand === 'NOT IN'){
+                    if(is_string($item) and strpos($item, 'SELECT')){
+                        $in_str = $item;
+                    }else{
+                        if(is_array($item)){
+                            $temp_item = $item;
+                        }else{
+                            $temp_item = explode(',', $item);
+                        }
+                        $in_str = '';
+
+                        foreach ($temp_item as $v){
+                            $in_str .= "'" . trim($v) . "',";
+                        }
+                    }
+
+                    $where .= $table . $key . ' ' . $operand . " (" . rtrim($in_str, ',') . ") " . $condition;
+
+                }elseif(strpos($operand, 'LIKE') !== false){
+                    $like_template = explode('%', $operand);
+
+                    foreach ($like_template as $lt_key => $lt){
+                        if(!$lt){
+                            if(!$lt_key){
+                                $item = '%' . $item;
+                            }else{
+                                $item .= '%';
+                            }
+                        }
+                    }
+
+                    $where .= $table . $key . " LIKE '" . $item . "' $condition";
+
+                }else {
+
+                    // проверка на подзапросы
+                    if(strpos($item, 'SELECT') === 0){
+                        $where .= $table . $key . $operand . '(' . $item . ') ' . $condition;
+                    }else{
+                        $where .= $table . $key . $operand . "'" . $item . "' " . $condition;
+                    }
+
+                }
+
+            }
+
+            // убираем последнее условие
+            $where = substr($where, 0, strrpos($where, $condition));
+
+        }
+
+        return $where;
+
+    }
 
     // создание запроса сортировки
     protected function createOrder($table = false, $set){

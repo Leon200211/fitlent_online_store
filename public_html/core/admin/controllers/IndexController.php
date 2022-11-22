@@ -22,11 +22,14 @@ class IndexController extends BaseController
         $res = $db->read($table, [
             'fields' => ['id', 'name'],
             'where' => [
-                'id' => 1,
-                'name' => 'Leon'
+                'name' => 'leon, as, ad',
+                'id' => 'Leon , sadd, sd',
+                'fio' => 'test',
+                'cat' => 'with',
+                'color' => ['red', 'blue', 'black']
             ],
-            'operand' => ['=', '='],
-            'condition' => ['AND'],
+            'operand' => ['IN', 'NOT IN', 'LIKE%', '=', 'IN'],
+            'condition' => ['AND', 'OR'],
             'order' => ['id', 'name'],
             'order_direction' => ['ASC', 'DESC'],
             'limit' => '2'
