@@ -22,17 +22,37 @@ class IndexController extends BaseController
         $res = $db->read($table, [
             'fields' => ['id', 'name'],
             'where' => [
-                'name' => 'leon, as, ad',
-                'id' => 'Leon , sadd, sd',
-                'fio' => 'test',
-                'cat' => 'with',
-                'color' => ['red', 'blue', 'black']
+                'name' => "Leo"
             ],
             'operand' => ['IN', 'NOT IN', 'LIKE%', '=', 'IN'],
             'condition' => ['AND', 'OR'],
-            'order' => ['id', 'name'],
-            'order_direction' => ['ASC', 'DESC'],
-            'limit' => '2'
+            'order' => ['name'],
+            'order_direction' => ['DESC'],
+            'limit' => '2',
+            'join' => [
+                [
+                    'table' => 'join_table1',
+                    'fields' => ['id as j_id', 'name as j_name'],
+                    'type' => 'left',
+                    'where' => ['name' => 'leon'],
+                    'operand' => ['='],
+                    'condition' => ['OR'],
+                    'on' => [
+                        'table' => 'join_table1',
+                        'fields' => ['id', 'namessea']
+                    ],
+                    'group_condition' => 'AND'
+                ],
+                'join_table2' => [
+                    'table' => 'join_table1',
+                    'fields' => ['id as j2_id', 'name as j2_name'],
+                    'type' => 'left',
+                    'where' => ['name' => 'leon'],
+                    'operand' => ['!='],
+                    'condition' => ['OR'],
+                    'on' => ['id', 'namessea'],
+                ]
+            ]
         ]);
 
         exit("Hello");

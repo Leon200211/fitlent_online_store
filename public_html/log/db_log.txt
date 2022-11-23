@@ -10,3 +10,7 @@ Fault: 22-11-2022 17:43:02 - Ошибка в SQL запросе: SELECT articles
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line45
 
+Fault: 23-11-2022 17:56:06 - Ошибка в SQL запросе: SELECT articles.id,articles.name FROM articles  WHERE articles.name IN ('leon','as','ad') AND articles.id NOT IN (SELECT id FROM test WHERE name = 2)  ORDER BY articles.id ASC,articles.name DESC LIMIT 2 - 1146 Table 'fitlent_online_store.test' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line45
+

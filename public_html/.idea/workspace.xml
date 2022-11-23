@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -108,7 +108,9 @@
       <workItem from="1668692996036" duration="15000" />
       <workItem from="1669044831234" duration="4330000" />
       <workItem from="1669111444446" duration="79000" />
-      <workItem from="1669125242029" duration="4362000" />
+      <workItem from="1669125242029" duration="4444000" />
+      <workItem from="1669134547648" duration="8000" />
+      <workItem from="1669205749219" duration="9331000" />
     </task>
     <servers />
   </component>
@@ -119,9 +121,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/core/base/models/BaseModel.php</url>
-          <line>102</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/core/admin/controllers/IndexController.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
