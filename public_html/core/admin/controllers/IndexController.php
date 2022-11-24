@@ -19,40 +19,12 @@ class IndexController extends BaseController
 
         $table = 'articles';
 
-        $res = $db->read($table, [
-            'fields' => ['id', 'name'],
-            'where' => [
-                'name' => "Leo"
-            ],
-            'operand' => ['IN', 'NOT IN', 'LIKE%', '=', 'IN'],
-            'condition' => ['AND', 'OR'],
-            'order' => ['name'],
-            'order_direction' => ['DESC'],
-            'limit' => '2',
-            'join' => [
-                [
-                    'table' => 'join_table1',
-                    'fields' => ['id as j_id', 'name as j_name'],
-                    'type' => 'left',
-                    'where' => ['name' => 'leon'],
-                    'operand' => ['='],
-                    'condition' => ['OR'],
-                    'on' => [
-                        'table' => 'join_table1',
-                        'fields' => ['id', 'namessea']
-                    ],
-                    'group_condition' => 'AND'
-                ],
-                'join_table2' => [
-                    'table' => 'join_table1',
-                    'fields' => ['id as j2_id', 'name as j2_name'],
-                    'type' => 'left',
-                    'where' => ['name' => 'leon'],
-                    'operand' => ['!='],
-                    'condition' => ['OR'],
-                    'on' => ['id', 'namessea'],
-                ]
-            ]
+
+        $files['gellery_img'] = ["red''.jpg", "blue.jpg", 'black.jpg'];
+        $files['img'] = 'main_img.jpg';
+        $res = $db->add($table, [
+            'fields' => ['name' => 'sd',  'content' => 'dsg', 'price' => 100],
+            'except' => ['name'],
         ]);
 
         exit("Hello");

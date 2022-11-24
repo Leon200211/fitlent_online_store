@@ -53,6 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -110,7 +111,9 @@
       <workItem from="1669111444446" duration="79000" />
       <workItem from="1669125242029" duration="4444000" />
       <workItem from="1669134547648" duration="8000" />
-      <workItem from="1669205749219" duration="9331000" />
+      <workItem from="1669205749219" duration="9682000" />
+      <workItem from="1669225882376" duration="105000" />
+      <workItem from="1669302214554" duration="5227000" />
     </task>
     <servers />
   </component>
@@ -122,7 +125,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/core/admin/controllers/IndexController.php</url>
-          <line>57</line>
+          <line>29</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

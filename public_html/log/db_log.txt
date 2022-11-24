@@ -14,3 +14,47 @@ Fault: 23-11-2022 17:56:06 - Ошибка в SQL запросе: SELECT articles
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line45
 
+Fault: 24-11-2022 19:10:12 - Ошибка в SQL запросе: INSERT INTO articles (0,1,) VALUE ('id','name',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,1,) VALUE ('id','name',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:10:13 - Ошибка в SQL запросе: INSERT INTO articles (0,1,) VALUE ('id','name',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,1,) VALUE ('id','name',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:11:31 - Ошибка в SQL запросе: INSERT INTO articles (0,1,) VALUE ('id','name',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,1,) VALUE ('id','name',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:14:12 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUE ('sd','dsg','100',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('sd','dsg','100',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:15:20 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUE ('sd','dsg','100',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('sd','dsg','100',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:15:23 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUE ('sd','dsg','100',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('sd','dsg','100',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:17:10 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUE ('sd','dsg','100',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('sd','dsg','100',)' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:18:25 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUE ('sd','dsg','100') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('sd','dsg','100')' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:22:29 - Ошибка в SQL запросе: INSERT INTO articles (name,content,price,gellery_img,img) VALUE ('sd','dsg','100','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]','main_img.jpg') - 1054 Unknown column 'gellery_img' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:29:46 - Ошибка в SQL запросе: INSERT INTO articles (content,price,gellery_img,img) VALUE ('dsg','100','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]','main_img.jpg') - 1054 Unknown column 'gellery_img' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
+Fault: 24-11-2022 19:30:05 - Ошибка в SQL запросе: INSERT INTO articles (content,price) VALUE ('dsg','100') - 1364 Field 'name' doesn't have a default value
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line51
+
