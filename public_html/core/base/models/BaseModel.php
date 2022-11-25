@@ -167,27 +167,101 @@ class BaseModel extends BaseModelMethods
 
 
     // функция для добавления записи в таблицу
-    final public function add($table, $set){
+    final public function add($table, $set = []){
 
         $set['fields'] = (!empty($set['fields']) and is_array($set['fields']))
-            ? $set['fields'] : false;
+            ? $set['fields'] : $_POST;
         $set['files'] = (!empty($set['files']) and is_array($set['files']))
             ? $set['files'] : false;
+
+        if(!$set['fields'] and !$set['files']){
+            return false;
+        }
+
         $set['return_id'] = !empty($set['return_id']) ? true : false;
         $set['except'] = (!empty($set['except']) and is_array($set['except']))
             ? $set['except'] : false;
-
 
         $insert_arr = $this->createInsert($set['fields'], $set['files'], $set['except']);
 
         if($insert_arr){
             $query = "INSERT INTO $table ({$insert_arr['fields']}) VALUE ({$insert_arr['values']})";
+
             return $this->my_query($query, 'c', $set['return_id']);
         }
 
         return false;
+    }
+
+
+
+    // функция для редактирования данных таблицы
+    final public function update($table, $set = []){
+
+        $set['fields'] = (!empty($set['fields']) and is_array($set['fields']))
+            ? $set['fields'] : $_POST;
+        $set['files'] = (!empty($set['files']) and is_array($set['files']))
+            ? $set['files'] : false;
+
+        if(!$set['fields'] and !$set['files']){
+            return false;
+        }
+
+        $set['except'] = (!empty($set['except']) and is_array($set['except']))
+            ? $set['except'] : false;
+
+        $where = '';
+
+        // all_rows - обновить все поля в таблице
+        if(!isset($set['all_rows'])){
+            if(isset($set['where'])){
+                $where = $this->createWhere($set);
+            }else{
+                $columns = $this->showColumns($table);
+                // если нет полей
+                if(!$columns){
+                    return false;
+                }
+
+
+                if($columns['id_row'] and $set['fields'][$columns['id_row']]){
+                    $where = 'WHERE ' . $columns['id_row'] . '=' . $set['fields'][$columns['id_row']];
+
+                    // удаляем поле
+                    unset($set['fields'][$columns['id_row']]);
+                }
+
+            }
+        }
+
+        $update = $this->createUpdate($set['fields'], $set['files'], $set['except']);
+
+        $query = "UPDATE $table SET $update $where";
+
+        return $this->my_query($query, 'u');
 
     }
 
+
+
+
+    // метод возвращает список всех полей в таблице
+    final public function showColumns($table){
+        $query = "SHOW COLUMNS FROM $table";
+        $res = $this->my_query($query);
+        
+        $columns = [];
+        if($res){
+            foreach ($res as $column) {
+                $columns[$column['Field']] = $column;
+                // если это первичный ключ
+                if($column['Key'] === 'PRI'){
+                    $columns['id_row'] = $column['Field'];
+                }
+            }
+        }
+
+        return $columns;
+    }
 
 }

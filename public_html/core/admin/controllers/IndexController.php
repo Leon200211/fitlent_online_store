@@ -20,12 +20,12 @@ class IndexController extends BaseController
         $table = 'articles';
 
 
-        $files['gellery_img'] = ["red''.jpg", "blue.jpg", 'black.jpg'];
-        $files['img'] = 'main_img.jpg';
-        $res = $db->add($table, [
-            'fields' => ['name' => 'sd',  'content' => 'dsg', 'price' => 100],
-            'except' => ['name'],
-        ]);
+        $_POST['id'] = 3;
+        $_POST['name'] = '';
+
+        $files['price'] = 1000;
+
+        $res = $db->update($table, ['files' => $files]);
 
         exit("Hello");
     }

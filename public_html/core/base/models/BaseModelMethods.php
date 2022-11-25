@@ -8,6 +8,10 @@ abstract class BaseModelMethods
 {
 
 
+    // массив встроенных функций в mySql
+    protected $mySql_function = ['NOW()'];
+
+
     // ===================================================
     // Для SELECT
     // ===================================================
@@ -247,22 +251,17 @@ abstract class BaseModelMethods
 
     protected function createInsert($fields, $files, $except){
 
-        if(!$fields){
-            $fields = $_POST;
-        }
-
         $insert_arr = [];
 
         if($fields){
-            // массив встроенных функций в mySql
-            $mySql_function = ['NOW()'];
 
             foreach ($fields as $row => $value){
 
+                // если вставить кроме
                 if($except and in_array($row, $except)) continue;
 
                 @$insert_arr['fields'] .= $row . ',';
-                if(in_array($value, $mySql_function)){
+                if(in_array($value, $this->mySql_function)){
                     @$insert_arr['values'] .= $value . ',';
                 }else{
                     @$insert_arr['values'] .= "'" . addslashes($value) . "',";
@@ -280,23 +279,62 @@ abstract class BaseModelMethods
                     @$insert_arr['values'] .= "'" . addslashes($file) . "',";
                 }
 
-                $file = 'main_img.jpg';
-                $arr['gallery_img'] = ['1.jpg', '2.png'];
             }
         }
 
 
         // обрезаем запятую
-        if($insert_arr){
-            foreach ($insert_arr as $key => $arr){
-                $insert_arr[$key] = rtrim($arr, ',');
-            }
+        foreach ($insert_arr as $key => $arr){
+            $insert_arr[$key] = rtrim($arr, ',');
         }
+
 
         return $insert_arr;
 
     }
 
+
+
+    // ===================================================
+    // Для UPDATE
+    // ===================================================
+    protected function createUpdate($fields, $files, $except){
+
+        $update = '';
+
+        if($fields){
+            foreach ($fields as $row => $value) {
+
+                // если обновить кроме
+                if($except and in_array($row, $except)) continue;
+
+                $update .= $row . "=";
+
+                if(in_array($value, $this->mySql_function)){
+                    $update .= $value . ',';
+                }else{
+                    $update .= "'" . addslashes($value) . "',";
+                }
+
+            }
+        }
+
+        if($files){
+            foreach ($files as $row => $file){
+
+                $update .= $row . '=';
+
+                if(is_array($file)){
+                    $update .= "'" . addslashes(json_encode($file)) . "',";
+                }else{
+                    $update .= "'" . addslashes($file) . "',";
+                }
+            }
+        }
+
+        return rtrim($update, ',');
+
+    }
 
 
 
