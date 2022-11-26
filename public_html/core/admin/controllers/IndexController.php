@@ -20,12 +20,14 @@ class IndexController extends BaseController
         $table = 'articles';
 
 
-        $_POST['id'] = 3;
-        $_POST['name'] = '';
-
-        $files['price'] = 1000;
-
-        $res = $db->update($table, ['files' => $files]);
+        $res = $db->delete($table, [
+            'where' => ['id' => 2],
+            'join' => [
+                [   'table' => 'student',
+                    'on' => ['name', 'id']
+                ]
+            ]
+        ]);
 
         exit("Hello");
     }

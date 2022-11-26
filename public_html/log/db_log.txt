@@ -90,3 +90,31 @@ Fault: 25-11-2022 17:19:17 - Ошибка в SQL запросе: UPDATE articles
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line51
 
+Fault: 26-11-2022 19:26:30 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:35:07 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:36:38 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:38:33 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:39:54 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:41:48 - Ошибка в SQL запросе: UPDATE articles SET 0='id',1='name' WHERE id='1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0='id',1='name' WHERE id='1'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
+Fault: 26-11-2022 19:49:14 - Ошибка в SQL запросе: DELETE articles FROMarticles  WHERE articles.id='2'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROMarticles  WHERE articles.id='2'' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+

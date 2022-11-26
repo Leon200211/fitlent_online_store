@@ -30,7 +30,6 @@ class BaseModel extends BaseModelMethods
 
         $this->db->query("SET NAMES UTF8");
 
-
     }
 
 
@@ -244,6 +243,57 @@ class BaseModel extends BaseModelMethods
 
 
 
+    // функция для удаления записи из таблицы в Базе данных
+    // метод может удалять с использованием группировки таблиц
+    final public function delete($table, $set){
+
+        $table = trim($table);
+
+        $where = $this->createWhere($set, $table);
+
+        $columns = $this->showColumns($table);
+        if(!$columns){
+            return false;
+        }
+
+        if(isset($set['fields']) and is_array($set['fields']) and !empty($set['fields'])){
+
+            if($columns['id_row']){
+                // поиск первичного ключа
+                $key = array_search($columns['id_row'], $set['fields']);
+                // строгое не равенство потому что если индекс будет 0 он будет false
+                if($key !== false){
+                    unset($set['fields'][$key]);
+                }
+            }
+            
+            $fields = [];
+
+            foreach ($set['fields'] as $field) {
+                $fields[$field] = $columns[$field]['Default'];
+            }
+
+
+            $update = $this->createUpdate($fields, false, false);
+
+            $query = "UPDATE $table SET $update $where";
+
+        }else{
+
+            $join_arr = $this->createJoin($set, $table);
+            $join = $join_arr['join'];
+            $join_tables = $join_arr['tables'];
+
+            $query = 'DELETE ' . $table . $join_tables . " FROM " . $table . ' ' . $join . ' ' . $where;
+
+        }
+
+        return $this->my_query($query, 'u');
+
+    }
+
+
+
 
     // метод возвращает список всех полей в таблице
     final public function showColumns($table){
@@ -263,5 +313,6 @@ class BaseModel extends BaseModelMethods
 
         return $columns;
     }
+
 
 }

@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -52,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../leon" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -115,7 +115,9 @@
       <workItem from="1669225882376" duration="105000" />
       <workItem from="1669302214554" duration="5584000" />
       <workItem from="1669360273856" duration="9000" />
-      <workItem from="1669381382625" duration="4200000" />
+      <workItem from="1669381382625" duration="5032000" />
+      <workItem from="1669394783151" duration="1426000" />
+      <workItem from="1669472089500" duration="5577000" />
     </task>
     <servers />
   </component>
@@ -127,7 +129,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/core/admin/controllers/IndexController.php</url>
-          <line>27</line>
+          <line>31</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
