@@ -7,6 +7,7 @@ namespace core\admin\controllers;
 
 use core\base\controllers\BaseController;
 use core\admin\models\Model;
+use core\base\settings\Settings;
 
 
 // индексный контроллер для админа
@@ -15,21 +16,10 @@ class IndexController extends BaseController
 
     protected function inputData(){
 
-        $db = Model::getInstance();
+        $redirect = PATH . Settings::get('routes')['admin']['alias'] . '/show';
+        $this->redirect($redirect);
 
-        $table = 'articles';
 
-
-        $res = $db->delete($table, [
-            'where' => ['id' => 2],
-            'join' => [
-                [   'table' => 'student',
-                    'on' => ['name', 'id']
-                ]
-            ]
-        ]);
-
-        exit("Hello");
     }
 
 }

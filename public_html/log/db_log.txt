@@ -118,3 +118,7 @@ Fault: 26-11-2022 19:49:14 - Ошибка в SQL запросе: DELETE articles
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line50
 
+Fault: 29-11-2022 19:07:08 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line50
+
