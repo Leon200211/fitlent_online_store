@@ -52,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Mat_test_1/public_html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -119,7 +119,9 @@
       <workItem from="1669394783151" duration="1426000" />
       <workItem from="1669472089500" duration="5908000" />
       <workItem from="1669557568727" duration="998000" />
-      <workItem from="1669734482628" duration="7541000" />
+      <workItem from="1669734482628" duration="7815000" />
+      <workItem from="1669922216304" duration="655000" />
+      <workItem from="1670079161899" duration="5240000" />
     </task>
     <servers />
   </component>
@@ -127,15 +129,6 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/core/admin/controllers/BaseAdmin.php</url>
-          <line>167</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />

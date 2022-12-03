@@ -52,6 +52,9 @@ class Settings
         ]
     ];
 
+    // расширение
+    private $expansion = 'core/admin/expansion/';
+
     private $defaultTable = 'articles';
 
     private $templateArr = [

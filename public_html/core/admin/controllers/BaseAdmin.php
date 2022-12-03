@@ -50,10 +50,10 @@ abstract class BaseAdmin extends BaseController
     // запрет на кеширование админки
     protected function sendNoCacheHeaders(){
 
-        header("Last-Modified: " . gmdate("D, d m Y H:i:s") . " GMT");
-        header("Cache-Control: no-cache, mush-revalidate");
-        header("Cache-Control: max-age=0");
-        header("Cache-Control: post-check=0,pre-check=0");  // for explore only
+        @header("Last-Modified: " . gmdate("D, d m Y H:i:s") . " GMT");
+        @header("Cache-Control: no-cache, mush-revalidate");
+        @header("Cache-Control: max-age=0");
+        @header("Cache-Control: post-check=0,pre-check=0");  // for explore only
 
     }
 
@@ -86,6 +86,7 @@ abstract class BaseAdmin extends BaseController
      * @param array $arr
      * @param bool $add если true и пришел arr, то добавить это к основному запросу
      */
+    // получаем данные из БД
     protected function createData($arr = [], $add = true){
 
         $fields = [];
@@ -114,7 +115,11 @@ abstract class BaseAdmin extends BaseController
 
             // склеиваем массивы
             if($arr['fields']){
-                $fields = Settings::getInstance()->arrayMergeRecursive($fields, $arr['fields']);
+                if(is_array($arr['fields'])){
+                    $fields = Settings::getInstance()->arrayMergeRecursive($fields, $arr['fields']);
+                }else{
+                    $fields[] = $arr['fields'];
+                }
             }
 
 
@@ -138,11 +143,19 @@ abstract class BaseAdmin extends BaseController
 
 
             // склеиваем массивы
-            if($arr['order']){
-                $order = Settings::getInstance()->arrayMergeRecursive($order, $arr['order']);
+            if(isset($arr['order'])){
+                if(is_array($arr['order'])) {
+                    $order = Settings::getInstance()->arrayMergeRecursive($order, $arr['order']);
+                }else{
+                    $order[] = $arr['order'];
+                }
             }
-            if($arr['order_direction']){
-                $order_direction = Settings::getInstance()->arrayMergeRecursive($order_direction, $arr['order_direction']);
+            if(isset($arr['order_direction'])){
+                if(is_array($arr['order_direction'])) {
+                    $order_direction = Settings::getInstance()->arrayMergeRecursive($order_direction, $arr['order_direction']);
+                }else{
+                    $order_direction[] = $arr['order_direction'];
+                }
             }
 
 
@@ -167,5 +180,29 @@ abstract class BaseAdmin extends BaseController
 
     }
 
+
+    // расширение для нашего фреймворка
+    protected function expansion($args = []){
+
+        // на всякий случай проверяем на наличие _ в названии таблицы
+        $filename = explode('_', $this->table);
+        $className = '';
+
+        // Создаем имя для класс в нормализованном формате
+        foreach ($filename as $item) $className .= ucfirst($item);
+
+        $class = Settings::get('expansion') . $className . 'Expansion';
+
+        if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH . $class . '.php')){
+
+            $class = str_replace('/', '\\', $class);
+
+            
+            $exp = $class::getInstance();
+            $res = $exp->expansion($args);
+
+        }
+
+    }
 
 }
