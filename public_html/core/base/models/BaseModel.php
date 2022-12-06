@@ -6,18 +6,16 @@ namespace core\base\models;
 
 
 // класс для работы с базовой моделью
-use core\base\controllers\Singleton;
 use core\base\exceptions\DbException;
 
-class BaseModel extends BaseModelMethods
+abstract class BaseModel extends BaseModelMethods
 {
 
-    // трейт для паттерна Singleton
-    use Singleton;
+
 
     protected $db;
 
-    private function __construct()
+    protected function connect()
     {
         // подключение к БД
         $this->db = @new \mysqli(HOST, USER, PASS, DB_NAME);

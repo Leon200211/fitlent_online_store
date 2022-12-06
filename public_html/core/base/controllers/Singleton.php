@@ -22,7 +22,17 @@ trait Singleton
             return self::$_instance;
         }
 
-        return self::$_instance = new self;  // если еще нет объекта, создать
+
+        self::$_instance = new self;
+
+
+        // проверяем есть ли экземпляра метод connect, если есть, то вызываем его
+        if(method_exists(self::$_instance, 'connect')){
+            self::$_instance->connect();
+        }
+
+
+        return self::$_instance;  // если еще нет объекта, создать
     }
 
 }

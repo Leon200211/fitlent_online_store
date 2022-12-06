@@ -25,15 +25,18 @@ class RouteController extends BaseController
 
         $address_str = $_SERVER['REQUEST_URI'];
 
-        // если символ / стоит в конце строки, то перенаправляем пользователя на страницу без этого /
-        if(strrpos($address_str, '/') === strlen($address_str) - 1 and strrpos($address_str, '/') !== 0){
-            $this->redirect(rtrim($address_str, '/'), 301);
-        }
 
         $path = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], 'index.php'));
 
         // PATH - константа из config.php
         if($path === PATH){
+
+            // если символ / стоит в конце строки, то перенаправляем пользователя на страницу без этого /
+            if(strrpos($address_str, '/') === strlen($address_str) - 1 and
+                strrpos($address_str, '/') !== strlen(PATH) - 1){
+                $this->redirect(rtrim($address_str, '/'), 301);
+            }
+
 
             // получаем данные из класса Settings с помощью геттера
             // это нежно чтобы знать пути к частям сайта
