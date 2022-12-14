@@ -14,6 +14,4 @@ class Model extends BaseModel
     use Singleton;
 
 
-
-
 }

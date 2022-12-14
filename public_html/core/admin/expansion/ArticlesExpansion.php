@@ -11,8 +11,9 @@ class ArticlesExpansion
 
     use Singleton;
 
-    public function expansion($args = []){
 
+    public function expansion($args = []){
+        $this->title = 'LALAL title';
     }
 
 

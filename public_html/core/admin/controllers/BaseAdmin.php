@@ -86,7 +86,7 @@ abstract class BaseAdmin extends BaseController
 
 
     // расширение для нашего фреймворка
-    protected function expansion($args = []){
+    protected function expansion($args = [], $settings = false){
 
         // на всякий случай проверяем на наличие _ в названии таблицы
         $filename = explode('_', $this->table);
@@ -95,17 +95,45 @@ abstract class BaseAdmin extends BaseController
         // Создаем имя для класс в нормализованном формате
         foreach ($filename as $item) $className .= ucfirst($item);
 
-        $class = Settings::get('expansion') . $className . 'Expansion';
+
+        if(!$settings){
+            $path = Settings::get('expansion');
+        }elseif(is_object($settings)){
+            $path = $settings::get('expansion');
+        }else{
+            $path = $settings;
+        }
+
+        $class = $path . $className . 'Expansion';
+
 
         if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH . $class . '.php')){
 
             $class = str_replace('/', '\\', $class);
 
-
             $exp = $class::getInstance();
-            $res = $exp->expansion($args);
+
+
+            // динамическое создание свойств у объекта
+            foreach ($this as $name => $value) {
+                $exp->$name = &$this->$name;
+            }
+
+            return $exp->expansion($args);
+
+        }else{
+
+            $file = $_SERVER['DOCUMENT_ROOT'] . PATH . $path . $this->table . '.php';
+
+            extract($args);
+
+            if(is_readable($file)){
+                return include $file;
+            }
 
         }
+
+        return false;
 
     }
 

@@ -60,6 +60,8 @@ class ShopSettings
         ]
     ];
 
+    // расширение
+    private $expansion = 'core/plugin/expansion/';
 
     // Здесь значения будут складываться с Settings
     private $templateArr = [

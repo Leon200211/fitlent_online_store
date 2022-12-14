@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a89f0e-2d8f-4b5f-9e1f-a9214867cc4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base/controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/base/controllers/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base/settings/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/base/settings/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base/settings/internal_settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/base/settings/internal_settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/user/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/user/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="10a89f0e-2d8f-4b5f-9e1f-a9214867cc4f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,14 +40,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Constants" value="false" />
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -124,12 +111,29 @@
       <workItem from="1670079161899" duration="5515000" />
       <workItem from="1670093641912" duration="11000" />
       <workItem from="1670142648963" duration="819000" />
-      <workItem from="1670337642254" duration="3150000" />
+      <workItem from="1670337642254" duration="3453000" />
+      <workItem from="1670346775947" duration="33000" />
+      <workItem from="1670403938431" duration="44000" />
+      <workItem from="1670617156350" duration="435000" />
+      <workItem from="1670668579469" duration="40000" />
+      <workItem from="1671023446250" duration="5123000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

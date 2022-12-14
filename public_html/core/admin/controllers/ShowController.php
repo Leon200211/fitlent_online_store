@@ -7,6 +7,7 @@ namespace core\admin\controllers;
 
 // контроллер для админ панели
 use core\base\settings\Settings;
+use core\base\settings\ShopSettings;
 
 class ShowController extends BaseAdmin
 {

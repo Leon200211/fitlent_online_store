@@ -1,0 +1,44 @@
+Fault: 14-12-2022 16:50:11 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:51:24 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:54:47 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:55:09 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:55:23 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:55:42 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:55:48 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:56:19 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 16:56:38 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 17:01:08 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
+Fault: 14-12-2022 17:02:51 - Не верное имя файла для подключения - core/admin/controllers/ShopSettings
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line37
+
