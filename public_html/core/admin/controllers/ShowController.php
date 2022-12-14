@@ -27,8 +27,18 @@ class ShowController extends BaseAdmin
     }
 
 
-
+    // вывод шаблона
     protected function outputData(){
+
+        $args = func_get_arg(0);
+        $vars = $args ? $args : [];
+
+        // доп проверка, можно убрать так как есть render в BaseController
+        if(!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
+
+        $this->content = $this->render($this->template, $vars);
+
+        return parent::outputData();
 
     }
 

@@ -12,7 +12,12 @@ abstract class BaseController
 
     use \core\base\controllers\BaseMethods;
 
+    // для шаблонов
+    protected $header;
+    protected $content;
+    protected $footer;
     protected $page;
+
     protected $errors;
 
     protected $controller;  // контроллеры
@@ -22,6 +27,7 @@ abstract class BaseController
 
 
     // для подключения
+    protected $template;
     protected $styles;
     protected $scripts;
 
@@ -53,6 +59,7 @@ abstract class BaseController
 
 
     public function request($args){
+
         $this->parameters = $args['parameters'];
 
         $inputData = $args['inputMethod'];
@@ -75,7 +82,6 @@ abstract class BaseController
             $this->writeLog($this->errors);
         }
 
-
         $this->getPage();
 
     }
@@ -84,7 +90,7 @@ abstract class BaseController
     // генератор шаблонов
     protected function render($path = '', $parameters = []){
 
-        extract($parameters);
+        @extract($parameters);
 
 
         if(!$path){

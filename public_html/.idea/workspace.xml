@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -41,11 +41,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/admin/views" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views" />
+      <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\css" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\base\exceptions" />
     </key>
   </component>
@@ -116,7 +118,8 @@
       <workItem from="1670403938431" duration="44000" />
       <workItem from="1670617156350" duration="435000" />
       <workItem from="1670668579469" duration="40000" />
-      <workItem from="1671023446250" duration="5123000" />
+      <workItem from="1671023446250" duration="5775000" />
+      <workItem from="1671041355657" duration="3285000" />
     </task>
     <servers />
   </component>

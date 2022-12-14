@@ -13,7 +13,7 @@ class ArticlesExpansion
 
 
     public function expansion($args = []){
-        $this->title = 'LALAL title';
+
     }
 
 

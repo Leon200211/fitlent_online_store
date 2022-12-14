@@ -19,6 +19,8 @@ abstract class BaseAdmin extends BaseController
     protected $columns;
     protected $data;
 
+    protected $adminPath;
+
     protected $menu;  // меню для админ панели
     protected $title;  // title для страницы
 
@@ -30,20 +32,23 @@ abstract class BaseAdmin extends BaseController
 
         $this->title = 'Fitlent engine';
 
-        if(!$this->model){
-            $this->model = Model::getInstance();
-        }
-        if(!$this->menu){
-            $this->menu = Settings::get('projectTables');
-        }
+        if(!$this->model) $this->model = Model::getInstance();
+        if(!$this->menu) $this->menu = Settings::get('defaultTable');
+        if(!$this->adminPath) $this->adminPath = Settings::get('routes')['admin']['alias'] . '/';
+
 
         // запрет на кеширование админки
         $this->sendNoCacheHeaders();
 
     }
 
-    protected function outputData(){
 
+    // вывод шаблона
+    protected function outputData(){
+        $this->header = $this->render(ADMIN_TEMPLATE . 'include/header');
+        $this->footer = $this->render(ADMIN_TEMPLATE . 'include/footer');
+
+        return $this->render(ADMIN_TEMPLATE . 'layout/default');
     }
 
 

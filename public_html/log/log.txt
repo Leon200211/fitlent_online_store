@@ -42,3 +42,7 @@ Fault: 14-12-2022 17:02:51 - Не верное имя файла для подк
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
  In line37
 
+Fault: 14-12-2022 21:50:23 - Отсутствует шаблон - core/admin/viewsshow
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line118
+

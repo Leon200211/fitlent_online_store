@@ -122,3 +122,11 @@ Fault: 29-11-2022 19:07:08 - Ошибка в SQL запросе: SHOW COLUMNS FR
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line50
 
+Fault: 14-12-2022 21:55:34 - Ошибка в SQL запросе: SHOW COLUMNS FROM settings - 1146 Table 'fitlent_online_store.settings' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 14-12-2022 22:00:40 - Ошибка в SQL запросе: SHOW COLUMNS FROM settings - 1146 Table 'fitlent_online_store.settings' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
