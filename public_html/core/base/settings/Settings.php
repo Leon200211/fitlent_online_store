@@ -55,7 +55,12 @@ class Settings
     // расширение
     private $expansion = 'core/admin/expansion/';
 
+    private $projectTables = [
+        'articles' => ['name' => 'Переводsdf таблицы', 'img' => 'pages.png'],
+        'test' => [],
+    ];
     private $defaultTable = 'articles';
+
 
     private $templateArr = [
         'text' => ['name', 'phone', 'address'],

@@ -130,3 +130,43 @@ Fault: 14-12-2022 22:00:40 - Ошибка в SQL запросе: SHOW COLUMNS FR
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 15-12-2022 18:29:16 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 18:31:09 - Ошибка в SQL запросе: SHOW COLUMNS FROM Array - 1146 Table 'fitlent_online_store.array' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 18:38:16 - Ошибка в SQL запросе: SHOW COLUMNS FROM Array - 1146 Table 'fitlent_online_store.array' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 18:50:53 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 18:54:18 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 18:56:13 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 19:16:40 - Ошибка в SQL запросе: SHOW COLUMNS FROM test - 1146 Table 'fitlent_online_store.test' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 19:16:46 - Ошибка в SQL запросе: SHOW COLUMNS FROM test - 1146 Table 'fitlent_online_store.test' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 19:18:20 - Ошибка в SQL запросе: SELECT test.id as id,test.name,test.content FROM test     - 1054 Unknown column 'test.content' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 15-12-2022 19:18:42 - Ошибка в SQL запросе: SELECT test.id as id,test.name,test.content FROM test     - 1054 Unknown column 'test.content' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

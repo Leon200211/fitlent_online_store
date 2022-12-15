@@ -33,8 +33,8 @@ abstract class BaseAdmin extends BaseController
         $this->title = 'Fitlent engine';
 
         if(!$this->model) $this->model = Model::getInstance();
-        if(!$this->menu) $this->menu = Settings::get('defaultTable');
-        if(!$this->adminPath) $this->adminPath = Settings::get('routes')['admin']['alias'] . '/';
+        if(!$this->menu) $this->menu = Settings::get('projectTables');
+        if(!$this->adminPath) $this->adminPath = PATH . Settings::get('routes')['admin']['alias'] . '/';
 
 
         // запрет на кеширование админки
