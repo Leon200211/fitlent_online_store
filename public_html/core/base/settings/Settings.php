@@ -67,6 +67,18 @@ class Settings
         'textarea' => ['content', 'keywords']
     ];
 
+    // для перевода названия таблиц
+    private $translate = [
+        'name' => ['Название', 'Не более 100 символов'],
+        'content' => []
+    ];
+
+    // для админ панели
+    private $blockNeedle = [
+        'vg-rows' => [],
+        'vg-img' => ['id'],
+        'vg-content' => ['content']
+    ];
 
     // для склейки полей
     public function clueProperties($class){

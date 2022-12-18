@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -40,8 +40,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/admin/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -120,7 +122,10 @@
       <workItem from="1670668579469" duration="40000" />
       <workItem from="1671023446250" duration="5775000" />
       <workItem from="1671041355657" duration="3285000" />
-      <workItem from="1671117157968" duration="3931000" />
+      <workItem from="1671117157968" duration="4532000" />
+      <workItem from="1671283433193" duration="116000" />
+      <workItem from="1671303674578" duration="26000" />
+      <workItem from="1671380291281" duration="7278000" />
     </task>
     <servers />
   </component>
@@ -140,6 +145,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/admin/controllers/BaseAdmin.php</url>
+          <line>215</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />

@@ -54,3 +54,27 @@ Fault: 15-12-2022 19:19:46 - Не верное имя файла для подк
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
  In line38
 
+Fault: 18-12-2022 19:42:25 - Не верное имя файла для подключения - core/admin/controllers/AddController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 18-12-2022 19:42:28 - Не верное имя файла для подключения - core/admin/controllers/EditController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 18-12-2022 19:42:31 - Не верное имя файла для подключения - core/admin/controllers/EditController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 18-12-2022 21:10:00 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
+Fault: 18-12-2022 21:11:16 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
+Fault: 18-12-2022 21:14:21 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
