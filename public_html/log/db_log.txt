@@ -170,3 +170,28 @@ Fault: 15-12-2022 19:18:42 - Ошибка в SQL запросе: SELECT test.id 
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 19-12-2022 21:05:01 - Ошибка в SQL запросе: SELECT * FROM `information_schema`.`KTY_COLUMN_USAGE`
+                  WHERE TABLE_SCHEMA = `fitlent_online_store` AND TABLE_NAME = `articles`
+                  CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null' at line 3
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 19-12-2022 21:05:56 - Ошибка в SQL запросе: SELECT * FROM `information_schema`.`KEY_COLUMN_USAGE`
+                  WHERE TABLE_SCHEMA = `fitlent_online_store` AND TABLE_NAME = `articles`
+                  CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null' at line 3
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 19-12-2022 21:06:15 - Ошибка в SQL запросе: SELECT * FROM `information_schema`.`KEY_COLUMN_USAGE`
+                  WHERE TABLE_SCHEMA = 'fitlent_online_store' AND TABLE_NAME = 'articles'
+                  CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null' at line 3
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 19-12-2022 21:12:56 - Ошибка в SQL запросе: SELECT COLLATION_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME 
+                  FROM `information_schema`.`KEY_COLUMN_USAGE`
+                  WHERE TABLE_SCHEMA = 'fitlent_online_store' AND TABLE_NAME = 'teacher' AND
+                  CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null - 1054 Unknown column 'COLLATION_NAME' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
