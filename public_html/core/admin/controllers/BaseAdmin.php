@@ -218,4 +218,22 @@ abstract class BaseAdmin extends BaseController
 
     }
 
+
+    // метод для работы с radio
+    protected function createRadio($settings = false){
+
+        if(!$settings) $settings = Settings::getInstance();
+
+        $radio = $settings::get('radio');
+
+        if($radio){
+            foreach ($this->columns as $name => $item){
+                if($radio[$name]){
+                    $this->foreignData[$name] = $radio[$name];
+                }
+            }
+        }
+
+    }
+
 }

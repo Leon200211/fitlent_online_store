@@ -1268,40 +1268,53 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="316" parent="299" name="teacher_pages_id_fk">
+    <column id="316" parent="299" name="visible">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="317" parent="299" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="317" parent="299" name="PRIMARY">
+    <key id="318" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="318" parent="299" name="teacher_pages_id_fk">
+    <foreign-key id="319" parent="299" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <RefTableName>pages</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>set-null</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="319" parent="300" name="id">
+    <column id="320" parent="300" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="320" parent="300" name="name">
+    <column id="321" parent="300" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="321" parent="300" name="th_id">
+    <column id="322" parent="300" name="th_id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="322" parent="300" name="PRIMARY">
+    <index id="323" parent="300" name="test_test_id_fk">
+      <ColNames>th_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="324" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="325" parent="300" name="test_test_id_fk">
+      <ColNames>th_id</ColNames>
+      <RefTableName>test</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

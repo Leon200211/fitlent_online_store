@@ -79,6 +79,11 @@ class Settings
         'tables' => ['teacher']
     ];
 
+    // словарь для radio
+    private $radio = [
+        'visible' => ['Нет', 'Да', 'default' => 'Да']
+    ];
+
     // для админ панели
     private $blockNeedle = [
         'vg-rows' => [],

@@ -129,7 +129,7 @@
       <workItem from="1671460400073" duration="13000" />
       <workItem from="1671469225868" duration="3666000" />
       <workItem from="1671563983741" duration="293000" />
-      <workItem from="1671619482913" duration="6692000" />
+      <workItem from="1671619482913" duration="9339000" />
     </task>
     <servers />
   </component>
@@ -149,6 +149,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/admin/controllers/AddController.php</url>
+          <line>26</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />
