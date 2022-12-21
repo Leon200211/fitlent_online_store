@@ -195,3 +195,15 @@ Fault: 19-12-2022 21:12:56 - Ошибка в SQL запросе: SELECT COLLATIO
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 21-12-2022 14:39:42 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers - 1146 Table 'fitlent_online_store.teachers' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 21-12-2022 14:41:40 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers - 1146 Table 'fitlent_online_store.teachers' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 21-12-2022 14:42:05 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers - 1146 Table 'fitlent_online_store.teachers' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

@@ -78,3 +78,7 @@ Fault: 18-12-2022 21:14:21 - Отсутствует шаблон - core/admin/vi
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
  In line119
 
+Fault: 21-12-2022 14:38:20 - Не верное имя файла для подключения - core/user/controllers/ShowController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+

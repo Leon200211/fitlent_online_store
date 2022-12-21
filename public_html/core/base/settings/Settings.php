@@ -73,6 +73,12 @@ class Settings
         'content' => []
     ];
 
+    // для работы с внешними данными, в рамках одной таблицы
+    private $rootItems = [
+        'name' => 'Корневая',
+        'tables' => ['teacher']
+    ];
+
     // для админ панели
     private $blockNeedle = [
         'vg-rows' => [],

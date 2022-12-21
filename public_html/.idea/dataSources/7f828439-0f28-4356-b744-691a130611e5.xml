@@ -1290,11 +1290,15 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="320" parent="300" name="Content">
+    <column id="320" parent="300" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="321" parent="300" name="PRIMARY">
+    <column id="321" parent="300" name="th_id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="322" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

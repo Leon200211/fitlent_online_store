@@ -13,6 +13,7 @@ class Model extends BaseModel
     // трейт для паттерна Singleton
     use Singleton;
 
+    // вернет все ключи кроме первичных
     public function showForeignKeys($table, $key = false){
 
         $db = DB_NAME;
@@ -26,7 +27,7 @@ class Model extends BaseModel
                   CONSTRAINT_NAME != 'PRIMARY' AND REFERENCED_TABLE_NAME is not null $where";
 
         return $this->my_query($query);
-        
+
     }
 
 
