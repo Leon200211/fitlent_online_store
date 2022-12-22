@@ -207,3 +207,19 @@ Fault: 21-12-2022 14:42:05 - Ошибка в SQL запросе: SHOW COLUMNS FR
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 22-12-2022 15:56:25 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 22-12-2022 15:59:29 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 22-12-2022 16:06:03 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 22-12-2022 16:09:48 - Ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

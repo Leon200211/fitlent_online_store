@@ -76,7 +76,7 @@ class Settings
     // для работы с внешними данными, в рамках одной таблицы
     private $rootItems = [
         'name' => 'Корневая',
-        'tables' => ['teacher']
+        'tables' => ['test', 'teacher']
     ];
 
     // словарь для radio

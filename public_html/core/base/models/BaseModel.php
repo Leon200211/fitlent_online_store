@@ -87,6 +87,7 @@ abstract class BaseModel extends BaseModelMethods
      * @param array $set
     $res = $db->read($table, [
         'fields' => ['id', 'name'],
+        'no_concat' => false/true  Если true не присоединять имя таблицы к полям и where
         'where' => [
             'name' => 'leon, as, ad',
             'id' => 'Leon , sadd, sd',

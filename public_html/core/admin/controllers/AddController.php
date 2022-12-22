@@ -21,6 +21,9 @@ class addController extends BaseAdmin
         // получение данных из связных таблиц
         $this->createForeignData();
 
+        // формируем позиции меню
+        $this->createMenuPosition();
+
         $this->createRadio();
 
         // разбор колонок на блоки
@@ -29,7 +32,7 @@ class addController extends BaseAdmin
     }
 
 
-    
+
 
     // получение данных из связных таблиц
     protected function createForeignProperty($arr, $rootItems){
@@ -102,7 +105,7 @@ class addController extends BaseAdmin
                 $this->createForeignProperty($item, $rootItems);
             }
 
-        }elseif ($this->columns['th_id']){        // если нет никаких внешних ключей
+        }elseif ($this->columns['parent_id']){        // если нет никаких внешних ключей
 
             $arr['COLUMN_NAME'] = $this->columns['id_row'];
             $arr['REFERENCED_COLUMN_NAME'] = $this->columns['id_row'];
@@ -116,6 +119,71 @@ class addController extends BaseAdmin
 
     }
 
+
+    // метод для формирования позиция меню
+    protected function createMenuPosition($settings = false){
+
+        // если есть menu_position
+        if($this->columns['menu_position']){
+
+            if(!$settings) $settings = Settings::getInstance();
+
+            $rootItems = $settings::get('rootItems');
+
+            if($this->columns['parent_id']){
+
+                if(in_array($this->table, $rootItems['tables'])){
+                    $where = '`parent_id` IS NULL OR `parent_id` = 0';
+                }else{
+
+                    $parent = $this->model->showForeignKeys($this->table, 'parent_id');
+                    if($parent){
+
+                        if($this->table === $parent[0]['REFERENCED_TABLE_NAME']){
+                            $where = '`parent_id` IS NULL OR `parent_id` = 0';
+                        }else{
+
+                            $columns = $this->model->showColumns($parent[0]['REFERENCED_TABLE_NAME']);
+
+                            if($columns['parent_id']) $order[] = 'parent_id';
+                            else $order[] = $parent[0]['REFERENCED_COLUMN_NAME'];
+
+                            $id =  $this->model->read($parent[0]['REFERENCED_TABLE_NAME'], [
+                                'fields' => [$parent[0]['REFERENCED_COLUMN_NAME']],
+                                'order' => $order,
+                                'limit' => '1'
+                            ])[0][$parent[0]['REFERENCED_COLUMN_NAME']];
+
+                            // сортировка
+                            if($id) $where = ['parent_id' => $id];
+
+                        }
+
+                    }else{
+                        $where = '`parent_id` IS NULL OR `parent_id` = 0';
+                    }
+
+                }
+
+            }
+
+            // отработка полученных данных
+            $menu_pos = $this->model->read($this->table, [
+               'fields' => ['COUNT(*) as count'],
+               'where' => $where,
+               'no_concat' => true
+            ])[0]['count'] + 1;   // +1 потому что мы добавляем через сайт
+
+            for($i = 1; $i <= $menu_pos; $i++){
+                $this->foreignData['menu_position'][$i - 1]['id'] = $i;
+                $this->foreignData['menu_position'][$i - 1]['name'] = $i;
+            }
+
+        }
+
+        return;
+
+    }
 
 
 }

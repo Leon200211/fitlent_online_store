@@ -86,3 +86,19 @@ Fault: 21-12-2022 16:34:25 - Отсутствует шаблон - core/admin/vi
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
  In line119
 
+Fault: 22-12-2022 15:50:06 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
+Fault: 22-12-2022 15:50:41 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
+Fault: 22-12-2022 15:51:15 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
+Fault: 22-12-2022 16:12:11 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+
