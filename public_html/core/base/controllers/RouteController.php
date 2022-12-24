@@ -25,6 +25,10 @@ class RouteController extends BaseController
 
         $address_str = $_SERVER['REQUEST_URI'];
 
+        // если есть аргументы GET
+        if($_SERVER['QUERY_STRING']){
+            $address_str = substr($address_str, 0, strpos($address_str, $_SERVER['QUERY_STRING']) - 1);
+        }
 
         $path = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], 'index.php'));
 

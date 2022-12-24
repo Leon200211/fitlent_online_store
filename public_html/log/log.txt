@@ -102,3 +102,7 @@ Fault: 22-12-2022 16:12:11 - Отсутствует шаблон - core/admin/vi
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
  In line119
 
+Fault: 24-12-2022 14:59:33 - Отсутствует шаблон - core/admin/views/add
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line119
+

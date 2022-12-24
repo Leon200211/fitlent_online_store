@@ -223,3 +223,7 @@ Fault: 22-12-2022 16:09:48 - Ошибка в SQL запросе: SHOW COLUMNS FR
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 24-12-2022 14:59:55 - Ошибка в SQL запросе: SELECT test.id as id,test.name,test.content FROM test   ORDER BY test.menu_position ASC  - 1054 Unknown column 'test.content' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
