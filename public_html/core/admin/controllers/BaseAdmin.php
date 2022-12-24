@@ -28,6 +28,12 @@ abstract class BaseAdmin extends BaseController
     protected $translate;
     protected $blocks = [];
 
+    protected $templateArr;
+    protected $formTemplates;
+
+    // разрешение на удаление
+    protected $noDelete;
+
     protected function inputData(){
 
         $this->init(true);  // настраиваем internal_settings.php для админа
@@ -38,6 +44,9 @@ abstract class BaseAdmin extends BaseController
         if(!$this->menu) $this->menu = Settings::get('projectTables');
         if(!$this->adminPath) $this->adminPath = PATH . Settings::get('routes')['admin']['alias'] . '/';
 
+
+        if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
+        if(!$this->formTemplates) $this->formTemplates = Settings::get('formTemplates');
 
         // запрет на кеширование админки
         $this->sendNoCacheHeaders();
@@ -184,8 +193,6 @@ abstract class BaseAdmin extends BaseController
 
             // определение дефолтного блока
             $default = array_keys($blocks)[0];
-
-
 
             foreach ($this->columns as $name => $item) {
                 // если айдишник, то пропускаем

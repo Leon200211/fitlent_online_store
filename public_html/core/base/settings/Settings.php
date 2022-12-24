@@ -57,14 +57,27 @@ class Settings
 
     private $projectTables = [
         'articles' => ['name' => 'Переводsdf таблицы', 'img' => 'pages.png'],
-        'test' => [],
+        'teacher' => ['name' => 'Переводsdf sdfsfsfтаблицы'],
     ];
+
     private $defaultTable = 'articles';
 
+    // путь к шаблонам
+    private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 
     private $templateArr = [
-        'text' => ['name', 'phone', 'address'],
-        'textarea' => ['content', 'keywords']
+        'text' => ['name'],
+        'textarea' => ['content'],
+        'radio' => ['price'],
+        'select' => ['menu_position', 'parent_id'],
+        'img' => ['img']
+    ];
+
+    // для админ панели
+    private $blockNeedle = [
+        'vg-rows' => [],
+        'vg-img' => ['img'],
+        'vg-content' => ['content']
     ];
 
     // для перевода названия таблиц
@@ -76,7 +89,7 @@ class Settings
     // для работы с внешними данными, в рамках одной таблицы
     private $rootItems = [
         'name' => 'Корневая',
-        'tables' => ['test', 'teacher']
+        'tables' => ['articles']
     ];
 
     // словарь для radio
@@ -84,12 +97,6 @@ class Settings
         'visible' => ['Нет', 'Да', 'default' => 'Да']
     ];
 
-    // для админ панели
-    private $blockNeedle = [
-        'vg-rows' => [],
-        'vg-img' => ['id'],
-        'vg-content' => ['content']
-    ];
 
     // для склейки полей
     public function clueProperties($class){

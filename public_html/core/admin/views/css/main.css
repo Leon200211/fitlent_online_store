@@ -283,6 +283,7 @@ label.vg-element {
 
 .vg-box-shadow {
     box-shadow: 0vw 2px 1px rgba(176, 190, 197, 0.5);
+    background: #fff;
 }
 
 #hideButton,
@@ -479,7 +480,7 @@ textarea {
 }
 
 .vg-img>div {
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .vg-content {

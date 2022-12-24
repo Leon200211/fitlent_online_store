@@ -259,3 +259,11 @@ Fault: 24-12-2022 17:04:06 - Ошибка в SQL запросе: INSERT INTO tes
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 24-12-2022 20:08:43 - Ошибка в SQL запросе: SHOW COLUMNS FROM test - 1146 Table 'fitlent_online_store.test' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 20:44:59 - Ошибка в SQL запросе: SHOW COLUMNS FROM test - 1146 Table 'fitlent_online_store.test' doesn't exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

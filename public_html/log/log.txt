@@ -106,3 +106,31 @@ Fault: 24-12-2022 14:59:33 - Отсутствует шаблон - core/admin/vi
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
  In line119
 
+Fault: 24-12-2022 17:59:17 - Не верное имя файла для подключения - core/admin/controllers/ViewsController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 24-12-2022 18:05:17 - Не верное имя файла для подключения - core/admin/controllers/DeleteController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 24-12-2022 18:10:29 - Class "core\user\controllers\Userfiles[Controller" does not exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line54
+
+Fault: 24-12-2022 18:10:39 - Class "core\user\controllers\Userfiles[Controller" does not exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line54
+
+Fault: 24-12-2022 18:10:42 - Class "core\user\controllers\Userfiles[Controller" does not exist
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\controllers\BaseController.php
+ In line54
+
+Fault: 24-12-2022 19:45:38 - Не найден шаблон C:/OpenServer/domains/fitlent_online_store/public_htmltext.php
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\add.php
+ In line45
+
+Fault: 24-12-2022 19:47:28 - Не найден шаблон C:/OpenServer/domains/fitlent_online_store/public_html/core/admin/view/include/form_templates/text.php
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\add.php
+ In line45
+

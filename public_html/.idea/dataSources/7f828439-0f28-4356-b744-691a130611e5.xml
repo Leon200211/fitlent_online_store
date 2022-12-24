@@ -1199,125 +1199,97 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <table id="297" parent="4" name="articles"/>
     <table id="298" parent="4" name="pages"/>
     <table id="299" parent="4" name="teacher"/>
-    <table id="300" parent="4" name="test"/>
-    <column id="301" parent="297" name="id">
+    <column id="300" parent="297" name="id">
       <Position>1</Position>
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="302" parent="297" name="name">
+    <column id="301" parent="297" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="303" parent="297" name="content">
+    <column id="302" parent="297" name="content">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="304" parent="297" name="price">
+    <column id="303" parent="297" name="price">
       <Position>4</Position>
       <DataType>float|0s</DataType>
     </column>
-    <column id="305" parent="297" name="parent_id">
+    <column id="304" parent="297" name="parent_id">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="306" parent="297" name="menu_position">
+    <column id="305" parent="297" name="menu_position">
       <Position>6</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="307" parent="297" name="img">
+    <column id="306" parent="297" name="img">
       <Position>7</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="308" parent="297" name="PRIMARY">
+    <key id="307" parent="297" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="309" parent="298" name="id">
+    <column id="308" parent="298" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="310" parent="298" name="name">
+    <column id="309" parent="298" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="311" parent="298" name="PRIMARY">
+    <key id="310" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="312" parent="299" name="id">
+    <column id="311" parent="299" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="313" parent="299" name="name">
+    <column id="312" parent="299" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="314" parent="299" name="content">
+    <column id="313" parent="299" name="content">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="315" parent="299" name="parent_id">
+    <column id="314" parent="299" name="parent_id">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="316" parent="299" name="visible">
+    <column id="315" parent="299" name="visible">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="317" parent="299" name="menu_position">
+    <column id="316" parent="299" name="menu_position">
       <Position>6</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="318" parent="299" name="teacher_pages_id_fk">
+    <index id="317" parent="299" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="319" parent="299" name="PRIMARY">
+    <key id="318" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="320" parent="299" name="teacher_pages_id_fk">
+    <foreign-key id="319" parent="299" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <RefTableName>pages</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>set-null</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="321" parent="300" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="322" parent="300" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="323" parent="300" name="th_id">
-      <Position>3</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="324" parent="300" name="menu_position">
-      <Position>4</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="325" parent="300" name="img">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <key id="326" parent="300" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
   </database-model>
 </dataSource>

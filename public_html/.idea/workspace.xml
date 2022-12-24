@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -51,6 +51,9 @@
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\css" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\base\exceptions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -131,7 +134,7 @@
       <workItem from="1671563983741" duration="293000" />
       <workItem from="1671619482913" duration="9648000" />
       <workItem from="1671711476690" duration="3478000" />
-      <workItem from="1671883089180" duration="6271000" />
+      <workItem from="1671883089180" duration="17508000" />
     </task>
     <servers />
   </component>
@@ -151,15 +154,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/core/admin/controllers/AddController.php</url>
-          <line>34</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />
