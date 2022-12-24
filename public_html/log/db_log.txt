@@ -227,3 +227,35 @@ Fault: 24-12-2022 14:59:55 - Ошибка в SQL запросе: SELECT test.id 
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 24-12-2022 16:19:57 - Ошибка в SQL запросе: INSERT INTO test ((name,img,name,img)) VALUE ('lena','test.pjg'),('sd','ds') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name,img,name,img)) VALUE ('lena','test.pjg'),('sd','ds')' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 16:20:38 - Ошибка в SQL запросе: INSERT INTO test (name,img,name,img)) VALUE ('lena','test.pjg'),('sd','ds') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUE ('lena','test.pjg'),('sd','ds')' at line 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 16:21:59 - Ошибка в SQL запросе: INSERT INTO test (name,img,name,img) VALUE ('lena','test.pjg'),('sd','ds') - 1110 Column 'name' specified twice
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 16:59:20 - Ошибка в SQL запросе: INSERT INTO test (name,img,th_id) VALUE ('lena','test.pjg','1'),('sd','ds','','') - 1136 Column count doesn't match value count at row 2
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 16:59:49 - Ошибка в SQL запросе: INSERT INTO test (name,img,th_id) VALUE ('lena','test.pjg','1'),('sd','ds','','') - 1136 Column count doesn't match value count at row 2
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 17:00:26 - Ошибка в SQL запросе: INSERT INTO test (name,img,th_id) VALUE ('lena','test.pjg','1'),('sd','ds','') - 1366 Incorrect integer value: '' for column 'th_id' at row 2
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 17:03:27 - Ошибка в SQL запросе: INSERT INTO test (name,img,th_id) VALUE ('lesdfgdsfgna','test.pjg','1','1.jpg') - 1136 Column count doesn't match value count at row 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 24-12-2022 17:04:06 - Ошибка в SQL запросе: INSERT INTO test (name,th_id) VALUE ('lesdfgdsfgna','1','1.jpg') - 1136 Column count doesn't match value count at row 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

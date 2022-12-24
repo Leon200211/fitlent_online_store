@@ -1310,7 +1310,11 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <key id="325" parent="300" name="PRIMARY">
+    <column id="325" parent="300" name="img">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="326" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

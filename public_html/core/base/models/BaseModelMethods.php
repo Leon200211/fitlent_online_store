@@ -259,41 +259,116 @@ abstract class BaseModelMethods
 
         $insert_arr = [];
 
-        if($fields){
 
-            foreach ($fields as $row => $value){
+        $insert_arr['fields'] = "(";
+        $insert_arr['values'] = "";
 
-                // если вставить кроме
-                if($except and in_array($row, $except)) continue;
+        // проверка на многомерный массив
+        $array_type = array_keys($fields)[0];
+        if(is_int($array_type)){
 
-                @$insert_arr['fields'] .= $row . ',';
-                if(in_array($value, $this->mySql_function)){
-                    @$insert_arr['values'] .= $value . ',';
-                }else{
-                    @$insert_arr['values'] .= "'" . addslashes($value) . "',";
-                }
-            }
-        }
-        if($files){
-            foreach ($files as $row => $file){
+            $check_fields = false;
+            $count_fields = 0;
 
-                @$insert_arr['fields'] .= $row . ',';
 
-                if(is_array($file)){
-                    @$insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";
-                }else{
-                    @$insert_arr['values'] .= "'" . addslashes($file) . "',";
+            foreach ($fields as $i => $item){
+
+                $insert_arr['values'] .= "(";
+
+                // во всех множествах должно быть одинаковое кол-во элементов
+                if(!$count_fields){
+                    $count_fields = count($item);
                 }
 
+
+                // счетчик количества полей в создании записи
+                $j = 0;
+
+                foreach ($item as $row => $value){
+
+                    // если в подмножестве есть то, что нужно пропустить
+                    if($except and in_array($row, $except)) continue;
+
+
+                    if(!$check_fields) $insert_arr['fields'] .= $row . ',';
+
+                    // если передаем функции sql
+                    if(in_array($value, $this->mySql_function)){
+                        $insert_arr['values'] .= $value . ',';
+                    }elseif ($value == "NULL" or $value === NULL){
+                        $insert_arr['values'] .= "NULL" . ',';
+                    }else{
+                        $insert_arr['values'] .= "'" . addslashes($value) . "',";
+                    }
+
+                    $j++;
+
+                    // проверка на кол-во полей в записе
+                    if($j === $count_fields) break;
+
+                }
+
+                // если след. запись меньше чем $count_fields, то добавим пустые ячейки
+                if($j < $count_fields){
+                    for(; $j < $count_fields; $j++){
+                        $insert_arr['values'] .= "NULL";
+                    }
+                }
+
+                // удаляем запятую в конце одной записи и ставим запятую перед след записью
+                $insert_arr['values'] = rtrim($insert_arr['values'], ',') . "),";
+
+                // сохранили название полей для insert
+                if(!$check_fields) $check_fields = true;
+
             }
+
+        }else{
+
+            $insert_arr['fields'] = "(";
+            $insert_arr['values'] = "(";
+
+            if($fields){
+                foreach ($fields as $row => $value){
+                    // если вставить кроме
+                    if($except and in_array($row, $except)) continue;
+
+                    @$insert_arr['fields'] .= $row . ',';
+
+                    if(in_array($value, $this->mySql_function)){
+                        $insert_arr['values'] .= $value . ',';
+                    }elseif ($value == "NULL" or $value === NULL){
+                        $insert_arr['values'] .= "NULL" . ',';
+                    }else{
+                        $insert_arr['values'] .= "'" . addslashes($value) . "',";
+                    }
+
+                }
+            }
+
+            if($files){
+                foreach ($files as $row => $file){
+
+                    @$insert_arr['fields'] .= $row . ',';
+
+                    if(is_array($file)){
+                        @$insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";
+                    }else{
+                        @$insert_arr['values'] .= "'" . addslashes($file) . "',";
+                    }
+
+                }
+            }
+
+            // удаляем запятую в конце одной записи и закрываем скобку
+            $insert_arr['values'] = rtrim($insert_arr['values'], ',') . ")";
+
         }
 
 
-        // обрезаем запятую
-        foreach ($insert_arr as $key => $arr){
-            $insert_arr[$key] = rtrim($arr, ',');
-        }
-
+        // удаляем запятую в конце
+        $insert_arr['fields'] = rtrim($insert_arr['fields'], ',') . ')';
+        $insert_arr['values'] = rtrim($insert_arr['values'], ',');
 
         return $insert_arr;
 

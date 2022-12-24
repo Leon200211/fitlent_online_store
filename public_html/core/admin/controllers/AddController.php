@@ -29,9 +29,26 @@ class addController extends BaseAdmin
         // разбор колонок на блоки
         $this->createOutputData();
 
+
+        $this->manyAdd();
+
+        exit();
     }
 
 
+    protected function manyAdd(){
+
+        $fields = [
+            'name' => 'lesdfgdsfgna', 'th_id' => 1
+        ];
+        $files = ['img' => ['1.jpg', '123']];
+
+        $this->model->add('test', [
+           'fields' => $fields,
+           'files' => $files
+        ]);
+
+    }
 
 
     // получение данных из связных таблиц
