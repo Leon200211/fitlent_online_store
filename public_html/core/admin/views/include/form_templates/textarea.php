@@ -2,10 +2,10 @@
     <div class="vg-wrap vg-element vg-full vg-box-shadow">
         <div class="vg-wrap vg-element vg-full">
             <div class="vg-element vg-full vg-left">
-                <span class="vg-header">Ключевые слова</span>
+                <span class="vg-header"><?=$this->translate[$row][0] ?: $row?></span>
             </div>
             <div class="vg-element vg-full vg-left">
-                <span class="vg-text vg-firm-color5">Не более 70 символов</span><span class="vg_subheader"></span>
+                <span class="vg-text vg-firm-color5"><?=$this->translate[$row][1] ?: $row?></span><span class="vg_subheader"></span>
             </div>
         </div>
         <div class="vg-element vg-full">
@@ -16,7 +16,7 @@
                         Визуальный режим
                     </label>
                 </div>
-                <textarea name="keywords" class="vg-input vg-text vg-full vg-firm-color1"></textarea>
+                <textarea name="keywords" class="vg-input vg-text vg-full vg-firm-color1"><?= isset($_SESSION['res'][$row]) ? htmlspecialchars($_SESSION['res'][$row]) : htmlspecialchars($this->data[$row])?></textarea>
             </div>
         </div>
     </div>

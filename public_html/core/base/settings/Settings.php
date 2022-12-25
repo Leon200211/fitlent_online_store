@@ -67,16 +67,17 @@ class Settings
 
     private $templateArr = [
         'text' => ['name'],
-        'textarea' => ['content'],
-        'radio' => ['price'],
+        'textarea' => ['content', 'keywords'],
+        'radio' => ['visible'],
         'select' => ['menu_position', 'parent_id'],
-        'img' => ['img']
+        'img' => ['img'],
+        'gallery_img' => ['gallery_img']
     ];
 
     // для админ панели
     private $blockNeedle = [
         'vg-rows' => [],
-        'vg-img' => ['img'],
+        'vg-img' => ['img', 'gallery_img'],
         'vg-content' => ['content']
     ];
 
@@ -89,7 +90,7 @@ class Settings
     // для работы с внешними данными, в рамках одной таблицы
     private $rootItems = [
         'name' => 'Корневая',
-        'tables' => ['articles']
+        'tables' => ['articles', 'teacher']
     ];
 
     // словарь для radio

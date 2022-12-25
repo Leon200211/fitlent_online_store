@@ -43,11 +43,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/userfiles" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\userfiles" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\css" />
       <recent name="C:\OpenServer\domains\fitlent_online_store\public_html\core\base\exceptions" />
@@ -134,7 +135,9 @@
       <workItem from="1671563983741" duration="293000" />
       <workItem from="1671619482913" duration="9648000" />
       <workItem from="1671711476690" duration="3478000" />
-      <workItem from="1671883089180" duration="17508000" />
+      <workItem from="1671883089180" duration="17954000" />
+      <workItem from="1671906374142" duration="27000" />
+      <workItem from="1671954412844" duration="6405000" />
     </task>
     <servers />
   </component>
@@ -154,10 +157,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/admin/views/include/form_templates/select.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$_COOKIE" />
-        <watch expression="$this" />
+        <watch expression="$this" language="PHP" />
       </configuration>
     </watches-manager>
   </component>

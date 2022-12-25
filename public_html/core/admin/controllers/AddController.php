@@ -32,6 +32,12 @@ class addController extends BaseAdmin
         // разбор колонок на блоки
         $this->createOutputData();
 
+        $this->data = [
+          'name' => 'masa',
+          'keywords' => 'Ключевики',
+            'img' => '1.png',
+            'gallery_img' => json_encode(['2.png', '3.png', '4.png'])
+        ];
 
     }
 
