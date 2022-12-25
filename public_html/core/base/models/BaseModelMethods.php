@@ -202,6 +202,8 @@ abstract class BaseModelMethods
                     }
 
                     $fields .= $this->createFields($item, $key);
+                    $fields = ',' . $fields;
+
                     $where .= $this->createWhere($item, $key, $group_condition);
 
                 }

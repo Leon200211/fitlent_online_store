@@ -12,6 +12,9 @@ header('Content-Type:text/html;charset=utf-8'); // в какой кодиров�
 session_start(); //стартуем сессию
 
 
+// отключаем сообщение о предупреждениях
+//error_reporting(0);
+
 
 require_once 'config.php';  // базовые настройки для хостинга
 require_once 'core/base/settings/internal_settings.php';  // фундаментальные настройки сайта
@@ -21,12 +24,8 @@ use core\base\exceptions\DbException;  // импортируем простра�
 use core\base\controllers\RouteController;
 
 
-
-
 try{
-
     RouteController::getInstance()->route();
-
 }
 catch (RouteException $e){
     exit($e->getMessage());

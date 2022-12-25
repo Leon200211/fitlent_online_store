@@ -11,18 +11,20 @@ use core\base\settings\Settings;
 // используется Паттерн проектирования Singleton (Одиночка)
 class ShopSettings
 {
-    use Singleton;
+    use Singleton{
+        getInstance as traitGetInstance;
+    }
 
     private $baseSettings;  // для доступа к экземпляру Settings
 
 
-    static private function instance(){
+    static public function getInstance(){
         if(self::$_instance instanceof self){  // проверка существует ли уже объект класса
             return self::$_instance;
         }
 
         // для доступа к экземпляру Settings
-        self::getInstance()->baseSettings = Settings::getInstance();
+        self::traitGetInstance()->baseSettings = Settings::getInstance();
         // для склейки полей
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class());
         // для записи значений склейки
@@ -33,7 +35,7 @@ class ShopSettings
 
     // геттер для получения данных
     static public function get($property){
-        return self::instance()->$property;
+        return self::getInstance()->$property;
     }
 
 

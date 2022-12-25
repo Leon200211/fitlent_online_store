@@ -267,3 +267,11 @@ Fault: 24-12-2022 20:44:59 - Ошибка в SQL запросе: SHOW COLUMNS FR
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 25-12-2022 12:42:30 - Ошибка в SQL запросе: SELECT articles.id,articles.nameteacher.id as t_id,teacher.name as t_name FROM articles LEFT JOIN teacher ON articles.id=teacher.id    - 1054 Unknown column 'articles.nameteacher.id' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 25-12-2022 12:48:20 - Ошибка в SQL запросе: SELECT articles.id,articles.nameteacher.id as t_id,teacher.name as t_name, teacher.id as t_id,teacher.name as t_name FROM articles LEFT JOIN teacher ON articles.id=teacher.id    - 1054 Unknown column 'articles.nameteacher.id' in 'field list'
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
