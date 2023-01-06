@@ -62,6 +62,10 @@ class Settings
 
     private $defaultTable = 'articles';
 
+    // путь к служебным сообщениям
+    private $messages = 'core/base/messages/';
+
+
     // путь к шаблонам
     private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 

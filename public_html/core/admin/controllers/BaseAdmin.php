@@ -7,7 +7,10 @@ use core\admin\models\Model;
 use core\base\controllers\BaseController;
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
+use Couchbase\PasswordAuthenticator;
 
+
+require_once $_SERVER['DOCUMENT_ROOT'] . PATH . 'libraries/functions.php';
 
 // базовый контроллер для админки
 abstract class BaseAdmin extends BaseController
@@ -21,6 +24,8 @@ abstract class BaseAdmin extends BaseController
     protected $foreignData;
 
     protected $adminPath;
+
+    protected $messages;  // путь к служебным сообщениям
 
     protected $menu;  // меню для админ панели
     protected $title;  // title для страницы
@@ -47,6 +52,8 @@ abstract class BaseAdmin extends BaseController
 
         if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
         if(!$this->formTemplates) $this->formTemplates = Settings::get('formTemplates');
+
+        if(!$this->messages) $this->messages = include $_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('messages') . 'informationMessages.php';
 
         // запрет на кеширование админки
         $this->sendNoCacheHeaders();
@@ -249,9 +256,7 @@ abstract class BaseAdmin extends BaseController
 
         // если метод Post
         if($this->isPost()){
-
             // валидация данных
-
             $this->clearPostFields($settings);
             $this->table = $this->clearStr($_POST['table']);
             unset($_POST['table']);
@@ -271,7 +276,48 @@ abstract class BaseAdmin extends BaseController
     }
 
 
-    // очищение полученных полей из Post
+    // добавляет данные у сессию
+    protected function addSessionData($arr){
+        if(!$arr) $arr = $_POST;
+
+        foreach ($arr as $key => $item){
+            $_SESSION['res'][$key] = $item;
+        }
+
+        // редиректим пользователя
+        $this->redirect();
+
+    }
+
+
+    // проверка на пустую строку
+    protected function emptyFields($str, $answer, $arr = []){
+
+        if(empty($str)){
+            // добавляем ошибку
+            $_SESSION['res']['answer'] = '<div class="error">' . $this->messages['empty'] . ' ' . $answer . '</div>';
+            $this->addSessionData($arr);
+        }
+
+    }
+
+
+    // проверка на кол-во символов
+    protected function countChar($str, $counter, $answer, $arr){
+        if(mb_strlen($str) > $counter){
+
+            // если кол-во символов превышает, то выдаем ошибку
+            $str_res = mb_str_replace('$1', $answer, $this->messages['count']);
+            $str_res = mb_str_replace('$2', $counter, $str_res);
+
+            // добавляем ошибку
+            $_SESSION['res']['answer'] = '<div class="error">' . $str_res . '</div>';
+            $this->addSessionData($arr);
+        }
+    }
+
+
+    // обработка полученных полей из Post
     protected function clearPostFields($settings, &$arr = []){
 
         // в случае ошибки валидации, будет происходить редирект
@@ -283,7 +329,7 @@ abstract class BaseAdmin extends BaseController
         if(!$settings) $settings = Settings::getInstance();
 
         // идентификатор
-        $id = $_POST[$this->columns['id_row']] ?: false;
+        $id = isset($_POST[@$this->columns['id_row']]) ? $_POST[@$this->columns['id_row']] : false;
 
         $validation = $settings::get('validation');
         if(!$this->translate) $this->translate = $settings::get('translate');
@@ -303,16 +349,16 @@ abstract class BaseAdmin extends BaseController
                 // начало валидации
                 if(isset($validation)){
 
-                    if($validation[$key]){
+                    if(isset($validation[$key])){
                         // если есть псевдоним у поля
-                        if($this->translate[$key]){
+                        if(isset($this->translate[$key]) ){
                             $answer = $this->translate[$key][0];
                         }else{
                             $answer = $key;
                         }
 
                         // проверка на шифрование
-                        if($validation[$key]['crypt']){
+                        if(isset($validation[$key]['crypt'])){
                             if($id){
                                 if(empty($item)){
                                     // разрегистрация поля
@@ -326,22 +372,22 @@ abstract class BaseAdmin extends BaseController
                             }
                         }
 
-                        if($validation[$key]['empty']){
-                            $this->emptyFields($item, $answer);
+                        if(isset($validation[$key]['empty'])){
+                            $this->emptyFields($item, $answer, $arr);
                         }
 
-                        if($validation[$key]['trim']){
+                        if(isset($validation[$key]['trim'])){
                             // зачищаем пробелы
                             $arr[$key] = trim($item);
                         }
 
-                        if($validation[$key]['int']){
+                        if(isset($validation[$key]['int'])){
                             // переводим в int
                             $arr[$key] = $this->clearNum($item);
                         }
 
-                        if($validation[$key]['count']){
-                            $this->countChar($item, $validation[$key]['count'], $answer);
+                        if(isset($validation[$key]['count'])){
+                            $this->countChar($item, $validation[$key]['count'], $answer, $arr);
                         }
 
 
