@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="fitlent.online.store" id="71d3d014-a194-47c0-a312-c174a9ef08fe" name="fitlent.online.store" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/userfiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -137,7 +137,13 @@
       <workItem from="1671711476690" duration="3478000" />
       <workItem from="1671883089180" duration="17954000" />
       <workItem from="1671906374142" duration="27000" />
-      <workItem from="1671954412844" duration="9326000" />
+      <workItem from="1671954412844" duration="9919000" />
+      <workItem from="1671986810646" duration="3178000" />
+      <workItem from="1671990217289" duration="10000" />
+      <workItem from="1672905751126" duration="129000" />
+      <workItem from="1672924188076" duration="47000" />
+      <workItem from="1672933632978" duration="711000" />
+      <workItem from="1672993409572" duration="3079000" />
     </task>
     <servers />
   </component>
@@ -163,11 +169,6 @@
           <url>file://$PROJECT_DIR$/core/admin/views/include/form_templates/select.php</url>
           <line>3</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>29</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,7 +16,7 @@
                         Визуальный режим
                     </label>
                 </div>
-                <textarea name="keywords" class="vg-input vg-text vg-full vg-firm-color1"><?= isset($_SESSION['res'][$row]) ? htmlspecialchars($_SESSION['res'][$row]) : htmlspecialchars($this->data[$row])?></textarea>
+                <textarea name="<?=$row?>" class="vg-input vg-text vg-full vg-firm-color1"><?= isset($_SESSION['res'][$row]) ? htmlspecialchars($_SESSION['res'][$row]) : htmlspecialchars($this->data[$row])?></textarea>
             </div>
         </div>
     </div>

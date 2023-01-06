@@ -243,4 +243,125 @@ abstract class BaseAdmin extends BaseController
 
     }
 
+
+    // Работа с данными из Post
+    protected function checkPost($settings = false){
+
+        // если метод Post
+        if($this->isPost()){
+
+            // валидация данных
+
+            $this->clearPostFields($settings);
+            $this->table = $this->clearStr($_POST['table']);
+            unset($_POST['table']);
+
+            // проверяем пришла ли таблица
+            if(isset($this->table)){
+                $this->createTableData($settings);
+
+                // редактирование или добавление новых данных
+                $this->editData();
+
+            }
+
+        }
+
+
+    }
+
+
+    // очищение полученных полей из Post
+    protected function clearPostFields($settings, &$arr = []){
+
+        // в случае ошибки валидации, будет происходить редирект
+
+        if(!$arr){
+            // ссылка на суперглобальный массив POST
+            $arr = &$_POST;
+        }
+        if(!$settings) $settings = Settings::getInstance();
+
+        // идентификатор
+        $id = $_POST[$this->columns['id_row']] ?: false;
+
+        $validation = $settings::get('validation');
+        if(!$this->translate) $this->translate = $settings::get('translate');
+
+
+        // проходимся по всем данным
+        foreach ($arr as $key => $item){
+
+            if(is_array($item)){
+                $this->clearPostFields($settings, $item);
+            }else{
+                // если пришел числовой код
+                if(is_numeric($item)){
+                    $arr[$key] = $this->clearNum($item);
+                }
+
+                // начало валидации
+                if(isset($validation)){
+
+                    if($validation[$key]){
+                        // если есть псевдоним у поля
+                        if($this->translate[$key]){
+                            $answer = $this->translate[$key][0];
+                        }else{
+                            $answer = $key;
+                        }
+
+                        // проверка на шифрование
+                        if($validation[$key]['crypt']){
+                            if($id){
+                                if(empty($item)){
+                                    // разрегистрация поля
+                                    unset($arr[$key]);
+                                    continue;
+                                }
+
+                                // кеширование
+                                $arr[$key] = md5($item);
+
+                            }
+                        }
+
+                        if($validation[$key]['empty']){
+                            $this->emptyFields($item, $answer);
+                        }
+
+                        if($validation[$key]['trim']){
+                            // зачищаем пробелы
+                            $arr[$key] = trim($item);
+                        }
+
+                        if($validation[$key]['int']){
+                            // переводим в int
+                            $arr[$key] = $this->clearNum($item);
+                        }
+
+                        if($validation[$key]['count']){
+                            $this->countChar($item, $validation[$key]['count'], $answer);
+                        }
+
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+
+    // редактирование или добавление новых данных
+    protected function editData(){
+
+    }
+
+
 }

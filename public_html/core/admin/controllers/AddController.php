@@ -19,6 +19,9 @@ class addController extends BaseAdmin
 
         if(!$this->userId) $this->execBase();
 
+        // Работа с данными из Post
+        $this->checkPost();
+
         $this->createTableData();
 
         // получение данных из связных таблиц

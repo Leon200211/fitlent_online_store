@@ -99,6 +99,17 @@ class Settings
     ];
 
 
+    // массив полей для валидации
+    private $validation = [
+        'name' => ['empty' => true, 'trim' => true],
+        'price' => ['int' => true],
+        'login' => ['empty' => true, 'trim' => true],
+        'password' => ['crypt' => true, 'empty' => true],
+        'keywords' => ['count' => 70, 'trim' => true],
+        'description' => ['count' => 160, 'trim' => true],
+    ];
+
+
     // для склейки полей
     public function clueProperties($class){
         $baseProperties = [];

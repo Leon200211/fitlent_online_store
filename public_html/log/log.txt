@@ -134,3 +134,27 @@ Fault: 24-12-2022 19:47:28 - Не найден шаблон C:/OpenServer/domain
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\admin\views\add.php
  In line45
 
+Fault: 25-12-2022 19:38:24 - Не верное имя файла для подключения - core/user/controllers/AccountController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 25-12-2022 20:29:42 - Не верное имя файла для подключения - core/user/controllers/DfgController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 25-12-2022 20:30:00 - Не верное имя файла для подключения - core/user/controllers/DfgController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 25-12-2022 20:31:54 - Не верное имя файла для подключения - core/user/controllers/DfgController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 25-12-2022 20:33:50 - Не верное имя файла для подключения - core/user/controllers/DfgController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
+Fault: 06-01-2023 11:22:17 - Не верное имя файла для подключения - core/admin/controllers/DeleteController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
