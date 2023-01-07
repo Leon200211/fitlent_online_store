@@ -1252,71 +1252,75 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>12</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <index id="313" parent="298" name="articles_teacher_id_fk">
+    <column id="313" parent="298" name="alias">
+      <Position>13</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="314" parent="298" name="articles_teacher_id_fk">
       <ColNames>parent_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="298" name="PRIMARY">
+    <key id="315" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="315" parent="298" name="articles_teacher_id_fk">
+    <foreign-key id="316" parent="298" name="articles_teacher_id_fk">
       <ColNames>parent_id</ColNames>
       <RefTableName>teacher</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="316" parent="299" name="id">
+    <column id="317" parent="299" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="317" parent="299" name="name">
+    <column id="318" parent="299" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="318" parent="299" name="PRIMARY">
+    <key id="319" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="319" parent="300" name="id">
+    <column id="320" parent="300" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="320" parent="300" name="name">
+    <column id="321" parent="300" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="321" parent="300" name="content">
+    <column id="322" parent="300" name="content">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="322" parent="300" name="parent_id">
+    <column id="323" parent="300" name="parent_id">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="323" parent="300" name="visible">
+    <column id="324" parent="300" name="visible">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="324" parent="300" name="menu_position">
+    <column id="325" parent="300" name="menu_position">
       <Position>6</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="325" parent="300" name="teacher_pages_id_fk">
+    <index id="326" parent="300" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="300" name="PRIMARY">
+    <key id="327" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="327" parent="300" name="teacher_pages_id_fk">
+    <foreign-key id="328" parent="300" name="teacher_pages_id_fk">
       <ColNames>parent_id</ColNames>
       <RefTableName>pages</RefTableName>
       <RefColNames>id</RefColNames>
