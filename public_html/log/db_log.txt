@@ -275,3 +275,23 @@ Fault: 25-12-2022 12:48:20 - Ошибка в SQL запросе: SELECT articles
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 07-01-2023 12:37:24 - Ошибка в SQL запросе: INSERT INTO articles (id,name,parent_id,menu_position,visible,keywords,content,date,datetime) VALUE ('','masa','0','1','1','Ключевики','',NOW(),NOW()) - 1366 Incorrect integer value: '' for column 'id' at row 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 07-01-2023 12:40:20 - Ошибка в SQL запросе: INSERT INTO articles (id,name,parent_id,menu_position,visible,keywords,content,date,datetime) VALUE ('','masa','0','1','1','Ключевики','',NOW(),NOW()) - 1366 Incorrect integer value: '' for column 'id' at row 1
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 07-01-2023 12:53:05 - Ошибка в SQL запросе: INSERT INTO articles (id,name,parent_id,menu_position,visible,keywords,content,date,datetime) VALUE (NULL,'masa','0','1','1','Ключевики','',NOW(),NOW()) - 1452 Cannot add or update a child row: a foreign key constraint fails (`fitlent_online_store`.`articles`, CONSTRAINT `articles_teacher_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `teacher` (`id`))
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 07-01-2023 12:58:53 - Ошибка в SQL запросе: INSERT INTO articles (id,name,parent_id,menu_position,visible,keywords,content,date,datetime) VALUE (NULL,'masa','0','1','1','Ключевики','',NOW(),NOW()) - 1452 Cannot add or update a child row: a foreign key constraint fails (`fitlent_online_store`.`articles`, CONSTRAINT `articles_teacher_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `teacher` (`id`))
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
+Fault: 07-01-2023 12:59:58 - Ошибка в SQL запросе: INSERT INTO teacher (id,name,parent_id,visible,menu_position,content) VALUE (NULL,'masa','0','1','5','') - 1452 Cannot add or update a child row: a foreign key constraint fails (`fitlent_online_store`.`teacher`, CONSTRAINT `teacher_pages_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `pages` (`id`) ON DELETE SET NULL ON UPDATE SET NULL)
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+

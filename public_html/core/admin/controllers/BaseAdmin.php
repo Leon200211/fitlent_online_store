@@ -30,6 +30,8 @@ abstract class BaseAdmin extends BaseController
     protected $menu;  // меню для админ панели
     protected $title;  // title для страницы
 
+    protected $fileArray; // массив для работы с файлами
+
     protected $translate;
     protected $blocks = [];
 
@@ -404,10 +406,127 @@ abstract class BaseAdmin extends BaseController
     }
 
 
-    // редактирование или добавление новых данных
-    protected function editData(){
+    // редактирование или добавление новых данных после валидации
+    protected function editData($returnId = false){
+
+        $id = false;
+        $method = 'add';
+        $where = [];
+
+        // проверка редактируем мы или добавляем данные
+        if($_POST[$this->columns['id_row']]){
+            $id = is_numeric($_POST[$this->columns['id_row']]) ?
+                $this->clearNum($_POST[$this->columns['id_row']]) :
+                $this->clearStr($_POST[$this->columns['id_row']]);
+
+            if($id){
+                // добавляем условие where и переопределяем метод
+                $where = [$this->columns['id_row'] => $id];
+                $method = 'update';
+            }
+        }
+
+        foreach ($this->columns as $key => $item){
+            // заменяем первичный ключ на NULL если его нет
+            if($key == $this->columns['id_row'] and $_POST[$this->columns['id_row']] === ''){
+                $_POST[$this->columns['id_row']] = NULL;
+            }
+
+
+            // если встречаем дату
+            if(is_array($item) and ($item['Type'] === 'date' or $item['Type'] === 'datetime')){
+                // другая короткая запись if
+                !isset($_POST[$key]) && $_POST[$key] = 'NOW()';
+            }
+        }
+
+        // обработка файлов
+        $this->createFile();
+
+        // создание чпу/алиасов
+        $this->createAlias($id);
+
+        // метод для работы с позициями в меню
+        $this->updateMenuPosition();
+
+
+        // метод формирующий поля исключения
+        $except = $this->checkExceptFields();
+
+
+        $res_id = $this->model->$method($this->table, [
+            'files' => $this->fileArray,
+            'where' => $where,
+            'return_id' => true,
+            'except' => $except
+        ]);
+
+
+        // если добавляли данные
+        if(!$id and $method === 'add'){
+            $_POST[$this->columns['id_row']] = $res_id;
+            $answerSuccess = $this->messages['addSuccess'];
+            $answerFail = $this->messages['addFail'];
+        }else{  // если редактировали данные
+            $answerSuccess = $this->messages['updateSuccess'];
+            $answerFail = $this->messages['updateFail'];
+        }
+
+
+        // get_defined_vars — Возвращает массив всех определённых переменных
+        $this->expansion(get_defined_vars());
+
+
+        // проверка алиасов
+        $result = $this->checkAlias($_POST[$this->columns['id_row']]);
+
+
+        // если получилось выполнить sql запрос
+        if($res_id){
+            $_SESSION['res']['answer'] = '<div class="success">' . $answerSuccess . '</div>';
+
+            if(!$returnId) $this->redirect();
+
+            return $_POST[$this->columns['id_row']];
+        }else{  // если получили ошибку
+            $_SESSION['res']['answer'] = '<div class="error">' . $answerFail . '</div>';
+
+            if(!$returnId) $this->redirect();
+        }
 
     }
+
+
+    // метод обработка файлов
+    protected function createFile(){
+
+    }
+
+
+    // метод создание чпу/алиасов
+    protected function createAlias($id = false){
+
+    }
+
+
+    // метод проверки чпу/алиасов
+    protected function checkAlias($id){
+
+    }
+
+
+    // метод для работы с позициями в меню
+    protected function updateMenuPosition(){
+
+    }
+
+
+    // метод формирующий поля исключения
+    protected function checkExceptFields(){
+
+    }
+
+
 
 
 }

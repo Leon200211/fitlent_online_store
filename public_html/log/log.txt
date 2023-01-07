@@ -158,3 +158,7 @@ Fault: 06-01-2023 11:22:17 - Не верное имя файла для подк
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
  In line38
 
+Fault: 07-01-2023 12:58:43 - Не верное имя файла для подключения - core/admin/controllers/EditController
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\settings\internal_settings.php
+ In line38
+
