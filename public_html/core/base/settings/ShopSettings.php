@@ -13,7 +13,7 @@ class ShopSettings
     // подключаем базовый трейт для настроек
     use BaseSettings;
 
-    
+
     // настройки пути
     // Здесь значения из Settings будут заменяться на эти
     private $routes = [

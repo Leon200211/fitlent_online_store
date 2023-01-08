@@ -295,3 +295,7 @@ Fault: 07-01-2023 12:59:58 - Ошибка в SQL запросе: INSERT INTO tea
 file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
  In line48
 
+Fault: 08-01-2023 11:38:27 - Ошибка в SQL запросе: INSERT INTO articles (id,name,parent_id,menu_position,visible,keywords,content,date,datetime,alias) VALUE (NULL,'Привет Леон Съел тебя','0','1','1','Ключевики','',NOW(),NOW(),'privet-leon-syel-tebya') - 1452 Cannot add or update a child row: a foreign key constraint fails (`fitlent_online_store`.`articles`, CONSTRAINT `articles_teacher_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `teacher` (`id`))
+file C:\OpenServer\domains\fitlent_online_store\public_html\core\base\models\BaseModel.php
+ In line48
+
