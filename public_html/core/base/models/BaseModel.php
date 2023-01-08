@@ -289,6 +289,24 @@ abstract class BaseModel extends BaseModelMethods
     }
 
 
+    // метод возвращающий список всех таблиц из БД
+    final public function showTables(){
+        $query = 'SHOW TABLES';
+
+        $tables = $this->my_query($query);
+
+        $tables_arr = [];
+
+        if($tables){
+            foreach ($tables as $table){
+                // reset — Устанавливает внутренний указатель массива на его первый элемент
+                $tables_arr[] = reset($table);
+            }
+        }
+
+        return $tables_arr;
+
+    }
 
 
     // метод возвращает список всех полей в таблице

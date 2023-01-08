@@ -575,12 +575,13 @@ abstract class BaseAdmin extends BaseController
     protected function checkAlias($id): bool {
 
         if($id){
+            // если такой алиас уже есть, то в новый дописываем id
             if($this->alias){
                 $this->alias .= '-' . $id;
 
                 $this->model->update($this->table, [
                     'fields' => ['alias' => $this->alias],
-                    'where' => [$this->columns['id_row'] => 'id']
+                    'where' => [$this->columns['id_row'] => $id]
                 ]);
 
                 return true;
